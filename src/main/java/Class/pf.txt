@@ -1,0 +1,50 @@
+1,P001,polo de golf,Adidas,polos,39.99,35
+2,Z001,zapatillas de futbol,Nike,zapatillas,79.99,25
+3,Z002,zapatillas de baloncesto,Puma,zapatillas,119.99,30
+4,B001,buzo con capucha,Nike,buzo,129.99,27
+5,P002,polo de tenis,Fila,polos,59.99,39
+6,S001,short de compresion,Adidas,short,45.99,30
+7,S002,short de baloncesto,Nike,short,65.99,20
+8,M001,medias de tenis,Adidas,medias,40.99,26
+9,B002,buzo sin capucha,Puma,buzo,69.90,30
+10,Z003,zapatillas de golf,Adidas,zapatillas,149.90,41
+11,P003,polo manga larga,Nike,polos,119.90,46
+12,B003,buzo de entrenamiento,Adidas,buzo,299.90,37
+13,P004,polo de cuello v,Adidas,polos,151.90,39
+14,M002,medias de baloncesto,Peak,medias,39.90,42
+15,Z004,zapatillas minimalistas,Saguaro,zapatillas,158.90,45
+16,B004,buzo térmico,Adidas,buzo,299.90,51
+17,P005,Jersey de ciclismo manga corta,Bianchi,polos,379.90,49
+18,S003,short de futbol,Adidas,short,158.90,38
+19,B008,buzo tejido,Adidas,buzo,299.90,39
+20,M003,medias de senderismo,Terrex,medias,89.90,30
+21,Z005,zapatillas de entrenamiento,Adidas,zapatillas,450.90,34
+22,S004,short de tenis,Adidas,short,189.90,48
+23,Z006,zapatillas para correr,Adidas,zapatillas,189.90,24
+24,B010,buzo linear,Adidas,buzo,167.90,49
+25,M011,medias de entrenamiento acolchadas,Adidas,medias,39.90,37
+26,P006,polo de voleibol,Adidas,polos,109.90,29
+27,S005,short de caminata,Nike,short,220.90,21
+28,B005,buzo ajustado,Adidas,buzo,98.60,37
+29,Z007,zapatillas de tenis,Adidas,214.90,34
+30,B009,buzo tres tiras, Adidas,buzo,279.90,20
+31,P007,Jersey de ciclismo manga larga,Followerprint,polos,119.90,39
+32,M004,medias de ciclismo,Adidas,medias,55.90,47
+33,Z008,zapatillas de escalada,Tatoo,zapatillas,549.90,23
+34,S009,short de voleibol,Nike,short,104.89,30
+35,S006,short de rugby,Gilbert,short,63.80,26
+36,P008,polo de natación,Nike,polos,201.90,38
+37,M005,medias tobilleras,Adidas,medias,89.90,32
+38,M010,medias de futbol,Pro-one,medias,33.90,30
+39,B006,buso tracksuit,Nike,buzo,229.90,31
+40,M006,medias de yoga,Ozaiic,medias,55.85,40
+41,P009,polo de rugby,Nike,polos,204.76,30
+42,Z009,zapatillas de voleibol,Asics,zapatillas,389.90,29
+43,B007,buzo de futbol,Puma,buzo,229.90,29
+44,M007,medias para correr,Adidas,medias,49.90,39
+45,S010,short de boxeo,Reebok,short,179.90,36
+46,S007,short para correr,Northyard,short,74.50,32
+47,M008,medias tobilleras de voleibol,Nike,medias,27.90,39
+48,M009,medias de rugby,Rugbier,medias,21.85,41
+49,Z010,zapatillas de gimnasio,Adidas,zapatillas,549,90,30
+50,S008,short de natacion,Nike,short,99.90,25
