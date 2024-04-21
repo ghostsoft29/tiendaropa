@@ -27,7 +27,10 @@ public class Principal1 {
     }
 
     public static void main(String[] args) throws IOException {
-        File f = new File("C:\\Users\\GHOSTSOFT\\Documents\\NetBeansProjects\\Logaritmo\\src\\main\\java\\S3\\cursos.txt");
+        String directorioActual = System.getProperty("user.dir");
+        String rutaDelArchivo = "src/main/java/Class/pf.txt";
+        String rutaCompleta = directorioActual + File.separator + rutaDelArchivo;
+        File f = new File(rutaCompleta);
         int t = totalLinea(f);
         //System.out.println(t);
 
