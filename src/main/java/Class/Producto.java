@@ -4,13 +4,14 @@
  */
 package Class;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 /**
  *
  * @author GHOSTSOFT
  */
-public class Producto {
+public class Producto implements Comparable<Producto> {
     private int codigo;
     private String codproducto;
     private String detalle;
@@ -110,6 +111,12 @@ public class Producto {
         final Producto other = (Producto) obj;
         return Objects.equals(this.codproducto, other.codproducto);
     }
+
+    @Override
+    public int compareTo(Producto t) {
+        return COMPARING_CODIGOPRO.compare(this, t);
+    }
+    public static final Comparator<Producto> COMPARING_CODIGOPRO = Comparator.comparing(Producto::getCodproducto);
     
     
 }
