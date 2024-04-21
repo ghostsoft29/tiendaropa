@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -30,7 +31,7 @@ public class Logist {
         return 0;
     }
     
-    public void malla1() throws IOException{
+    public void malla1(JTextArea list) throws IOException{
         String directorioActual = System.getProperty("user.dir");
         String rutaDelArchivo = "src/main/java/Class/pf.txt";
         String rutaCompleta = directorioActual + File.separator + rutaDelArchivo;
@@ -58,11 +59,17 @@ public class Logist {
                 }
                 c++;
                 linea1 = br.readLine();
+                list.setText("LISTA DE PRODUCTOS\n");
+                for (Producto item : malla) {
+                list.append("\n"+item);
+                }
             }
             fr.close();
             } catch (FileNotFoundException ex) {
             Logger.getLogger(Principal1.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
+        
     }
     
 }

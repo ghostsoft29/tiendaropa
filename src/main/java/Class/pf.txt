@@ -26,8 +26,8 @@
 26,P006,polo de voleibol,Adidas,polos,109.90,29
 27,S005,short de caminata,Nike,short,220.90,21
 28,B005,buzo ajustado,Adidas,buzo,98.60,37
-29,Z007,zapatillas de tenis,Adidas,214.90,34
-30,B009,buzo tres tiras, Adidas,buzo,279.90,20
+29,Z007,zapatillas de tenis,Adidas,zapatillas,214.90,34
+30,B009,buzo tres tiras,Adidas,buzo,279.90,20
 31,P007,Jersey de ciclismo manga larga,Followerprint,polos,119.90,39
 32,M004,medias de ciclismo,Adidas,medias,55.90,47
 33,Z008,zapatillas de escalada,Tatoo,zapatillas,549.90,23
