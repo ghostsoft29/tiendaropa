@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -29,7 +30,7 @@ public class Logist {
         return 0;
     }
     
-    public void malla1(){
+    public void malla1() throws IOException{
         String directorioActual = System.getProperty("user.dir");
         String rutaDelArchivo = "src/main/java/Class/pf.txt";
         String rutaCompleta = directorioActual + File.separator + rutaDelArchivo;
@@ -48,9 +49,12 @@ public class Logist {
                     String linea[] = linea1.split(",");
                     int codigo = Integer.parseInt(linea[0]);
                     String codproducto = linea[1];
-                    String nombre = linea[2];
-                    int creditos = Integer.parseInt(linea[3]);
-                    malla[c] = new Producto(codigo, ciclo, nombre, creditos);
+                    String detalle = linea[2];
+                    String marca=linea[3];
+                    String categoria=linea[4];
+                    double precio=Double.parseDouble(linea[5]);
+                    int cantidad = Integer.parseInt(linea[6]);
+                    malla[c] = new Producto(codigo, codproducto, detalle, marca,categoria,precio,cantidad);
                 }
                 c++;
                 linea1 = br.readLine();
