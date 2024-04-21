@@ -1,5 +1,5 @@
 
-package Clases;
+package Class;
 
 public class Ordena {
 
