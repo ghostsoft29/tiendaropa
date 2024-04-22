@@ -83,10 +83,12 @@ public class Logist {
                         }break;
                         case 3:{
                         Ordena.quickSort(malla);
-                        list.setText("LISTA DE ORDENADA\n");
-                        for (Producto item : malla) {
-                        list.append("\n"+item);
-                        }
+                        Producto a2=new Producto(bcod);
+                        int idx1=SearchUTP.binarySearch(malla,a2);
+                        if(idx1<0)
+                        list.setText("\nNo se encuentra");
+                        else
+                        list.setText("\n"+malla[idx1]);
                         }break;
                     }            
             } catch (FileNotFoundException ex) {
