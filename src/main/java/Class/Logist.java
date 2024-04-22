@@ -62,25 +62,25 @@ public class Logist {
                 }
                 c++;
                 linea1 = br.readLine();
-                //switch(sel){
-                    //case 1:{
-                        //list.setText("LISTA DE PRODUCTOS\n");
-                        //for (Producto item : malla) {
-                        //list.append("\n"+item);
-                        //}
-                    //}break;
-                   // case 2:{
-                        
-                   // }break;
-               // }
+                
                 
             }
             fr.close();
+            switch(sel){
+                    case 1:{
+                        list.setText("LISTA DE PRODUCTOS\n");
+                        for (Producto item : malla) {
+                        list.append("\n"+item);
+                        }
+                    }break;
+                        case 2:{
                         Ordena.quickSort(malla);
                         list.setText("LISTA DE ORDENADA\n");
                         for (Producto item : malla) {
                         list.append("\n"+item);
                         }
+                        }break;
+                    }            
             } catch (FileNotFoundException ex) {
             Logger.getLogger(Principal1.class.getName()).log(Level.SEVERE, null, ex);
             }       

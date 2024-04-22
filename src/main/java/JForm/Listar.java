@@ -129,8 +129,8 @@ public class Listar extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         try {
-            //a=1;
-            //l.setSel(a);
+            a=1;
+            l.setSel(a);
             l.malla1(jTextArea1);
         } catch (IOException ex) {
             Logger.getLogger(Listar.class.getName()).log(Level.SEVERE, null, ex);
