@@ -163,8 +163,8 @@ public class Listar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnOrdenarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        Buscar b=new Buscar();
-        b.show();
+        //Buscar b=new Buscar();
+        //b.show();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
 

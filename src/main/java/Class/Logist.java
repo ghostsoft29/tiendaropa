@@ -83,14 +83,10 @@ public class Logist {
                         }break;
                         case 3:{
                         Ordena.quickSort(malla);
-                        list.setText("El prducto es:\n");
-                        //busqueda binaria por codigo
-                        Producto c2=new Producto(bcod);
-                        int idx1=SearchUTP.binarySearch(malla,c2);
-                        if(idx1<0)
-                        list.append("\nNo se encuentra");
-                        else
-                        list.append("\n"+malla[idx1]);
+                        list.setText("LISTA DE ORDENADA\n");
+                        for (Producto item : malla) {
+                        list.append("\n"+item);
+                        }
                         }break;
                     }            
             } catch (FileNotFoundException ex) {
