@@ -106,11 +106,11 @@ public class Master extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        boolean b;
+
         us.setUser(String.valueOf(txtUsuario.getText()));
         us.setPass(String.valueOf(txtPass.getText()));
         us.acceso();
-        if(us.isA()==true){
+        if(us.isA()){
         Menu mn= new Menu();
         mn.show();
         dispose(); 
