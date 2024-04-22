@@ -116,6 +116,9 @@ public class Master extends javax.swing.JFrame {
         dispose(); 
         }else{
             JOptionPane.showMessageDialog(null, "No Coincide");
+            txtUsuario.setText(null);
+            txtPass.setText(null);
+            txtUsuario.requestFocus();
         }
         
     }//GEN-LAST:event_btnIngresarActionPerformed

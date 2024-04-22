@@ -40,13 +40,15 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="rmarca" min="-2" max="-2" attributes="0"/>
                           <Component id="rcodproducto" min="-2" max="-2" attributes="0"/>
-                          <Component id="rcategoria" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
-                              <Component id="btnOrdenar" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="rcategoria" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
+                                  <Component id="btnOrdenar" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="502" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnListar" min="-2" max="-2" attributes="0"/>
                           <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
