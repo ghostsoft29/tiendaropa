@@ -36,7 +36,6 @@ public class Producto implements Comparable<Producto> {
 
     
     
-
     public int getCodigo() {
         return codigo;
     }
@@ -97,7 +96,7 @@ public class Producto implements Comparable<Producto> {
     public String toString() {
         return "Producto{" + "codigo=" + codigo + ", codproducto=" + codproducto + ", detalle=" + detalle + ", marca=" + marca + ", categoria=" + categoria + ", precio=" + precio + ", cantidad=" + cantidad + '}';
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 3;
