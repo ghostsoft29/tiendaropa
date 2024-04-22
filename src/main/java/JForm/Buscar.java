@@ -38,7 +38,7 @@ public class Buscar extends javax.swing.JFrame {
         txtArea = new javax.swing.JTextArea();
         txtCodigo = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("CODIGO:");
 

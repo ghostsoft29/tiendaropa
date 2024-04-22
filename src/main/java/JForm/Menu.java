@@ -34,8 +34,6 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         javax.swing.GroupLayout jpanel1Layout = new javax.swing.GroupLayout(jpanel1);
         jpanel1.setLayout(jpanel1Layout);
         jpanel1Layout.setHorizontalGroup(
@@ -56,7 +54,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu2.setText("Mantenimiento");
 
-        jMenuItem2.setText("Listar");
+        jMenuItem2.setText("Reporte");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
