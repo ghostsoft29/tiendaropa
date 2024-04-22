@@ -92,7 +92,7 @@ public class Logist {
                         }break;
                     }            
             } catch (FileNotFoundException ex) {
-            Logger.getLogger(Principal1.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Logist.class.getName()).log(Level.SEVERE, null, ex);
             }       
     }
     
