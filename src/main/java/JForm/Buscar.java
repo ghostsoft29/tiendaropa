@@ -4,12 +4,18 @@
  */
 package JForm;
 
+import Class.*;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author GHOSTSOFT
  */
 public class Buscar extends javax.swing.JInternalFrame {
-
+    Logist l=new Logist();
+    int a=0;
     /**
      * Creates new form Buscar
      */
@@ -37,6 +43,11 @@ public class Buscar extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(txtResultado);
 
         txtBuscar.setText("BUSCAR");
+        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Codigo:");
 
@@ -76,6 +87,18 @@ public class Buscar extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+        
+        try {
+            a=3;
+            l.setSel(a);
+            l.setBcod(String.valueOf(txtCodigo.getText()));
+            l.malla1(txtResultado);
+        } catch (IOException ex) {
+            Logger.getLogger(Buscar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_txtBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

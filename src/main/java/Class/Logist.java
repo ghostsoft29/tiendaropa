@@ -21,6 +21,7 @@ import javax.swing.JTextArea;
 public class Logist {
     
     public static int sel;
+    public static String bcod;
     
     public static int totalLinea(File ff) {
         FileReader fr;
@@ -80,6 +81,13 @@ public class Logist {
                         list.append("\n"+item);
                         }
                         }break;
+                        case 3:{
+                        Ordena.quickSort(malla);
+                        list.setText("LISTA DE ORDENADA\n");
+                        for (Producto item : malla) {
+                        list.append("\n"+item);
+                        }
+                        }break;
                     }            
             } catch (FileNotFoundException ex) {
             Logger.getLogger(Principal1.class.getName()).log(Level.SEVERE, null, ex);
@@ -92,6 +100,14 @@ public class Logist {
 
     public static void setSel(int sel) {
         Logist.sel = sel;
+    }
+
+    public static String getBcod() {
+        return bcod;
+    }
+
+    public static void setBcod(String bcod) {
+        Logist.bcod = bcod;
     }
     
    
