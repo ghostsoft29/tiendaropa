@@ -13,6 +13,7 @@ import java.util.logging.Logger;
  */
 public class Listar extends javax.swing.JInternalFrame {
     Logist l=new Logist();
+    int a=0;
     /**
      * Creates new form Listar
      */
@@ -29,12 +30,15 @@ public class Listar extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        Grupo1 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        rcodproducto = new javax.swing.JRadioButton();
+        rmarca = new javax.swing.JRadioButton();
+        rcategoria = new javax.swing.JRadioButton();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -48,6 +52,11 @@ public class Listar extends javax.swing.JInternalFrame {
         });
 
         jButton2.setText("Ordenar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("X");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -55,6 +64,15 @@ public class Listar extends javax.swing.JInternalFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+
+        Grupo1.add(rcodproducto);
+        rcodproducto.setText("CODIGO PRODUCTO");
+
+        Grupo1.add(rmarca);
+        rmarca.setText("MARCA");
+
+        Grupo1.add(rcategoria);
+        rcategoria.setText("CATEGORIA");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,14 +84,19 @@ public class Listar extends javax.swing.JInternalFrame {
                 .addGap(15, 15, 15))
             .addGroup(layout.createSequentialGroup()
                 .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton2)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(566, 566, 566)
-                            .addComponent(jButton1))))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jButton2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rmarca)
+                            .addComponent(rcodproducto)
+                            .addComponent(rcategoria))
+                        .addGap(468, 468, 468)
+                        .addComponent(jButton1))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,10 +106,17 @@ public class Listar extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
-                .addGap(0, 64, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(rcodproducto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rmarca)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rcategoria)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
-                .addGap(26, 26, 26))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();
@@ -97,20 +127,39 @@ public class Listar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
         try {
+            //a=1;
+            //l.setSel(a);
             l.malla1(jTextArea1);
         } catch (IOException ex) {
             Logger.getLogger(Listar.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        try {
+            if(rcodproducto.isSelected()){
+                a=2;
+            }
+            l.setSel(a);
+            l.malla1(jTextArea1);
+        } catch (IOException ex) {
+            Logger.getLogger(Listar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup Grupo1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JRadioButton rcategoria;
+    private javax.swing.JRadioButton rcodproducto;
+    private javax.swing.JRadioButton rmarca;
     // End of variables declaration//GEN-END:variables
 }

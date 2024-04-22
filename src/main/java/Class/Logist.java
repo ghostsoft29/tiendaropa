@@ -4,7 +4,7 @@
  */
 package Class;
 
-import static Class.Principal1.totalLinea;
+//import static Class.Principal1.totalLinea;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -19,6 +19,9 @@ import javax.swing.JTextArea;
  * @author GHOSTSOFT
  */
 public class Logist {
+    
+    public static int sel;
+    
     public static int totalLinea(File ff) {
         FileReader fr;
         try {
@@ -59,17 +62,37 @@ public class Logist {
                 }
                 c++;
                 linea1 = br.readLine();
-                list.setText("LISTA DE PRODUCTOS\n");
-                for (Producto item : malla) {
-                list.append("\n"+item);
-                }
+                //switch(sel){
+                    //case 1:{
+                        //list.setText("LISTA DE PRODUCTOS\n");
+                        //for (Producto item : malla) {
+                        //list.append("\n"+item);
+                        //}
+                    //}break;
+                   // case 2:{
+                        
+                   // }break;
+               // }
+                
             }
             fr.close();
+                        Ordena.quickSort(malla);
+                        list.setText("LISTA DE ORDENADA\n");
+                        for (Producto item : malla) {
+                        list.append("\n"+item);
+                        }
             } catch (FileNotFoundException ex) {
             Logger.getLogger(Principal1.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-        
+            }       
     }
     
+    public static int getSel() {
+        return sel;
+    }
+
+    public static void setSel(int sel) {
+        Logist.sel = sel;
+    }
+    
+   
 }

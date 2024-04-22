@@ -30,6 +30,11 @@ public class Producto implements Comparable<Producto> {
         this.cantidad = cantidad;
     }
 
+    public Producto(int codigo) {
+        this.codigo = codigo;
+    }
+    
+
     public int getCodigo() {
         return codigo;
     }
@@ -93,7 +98,7 @@ public class Producto implements Comparable<Producto> {
 
     @Override
     public int hashCode() {
-        int hash = 3;
+        int hash = 7;
         return hash;
     }
 
@@ -109,14 +114,16 @@ public class Producto implements Comparable<Producto> {
             return false;
         }
         final Producto other = (Producto) obj;
-        return Objects.equals(this.codproducto, other.codproducto);
+        return this.codigo == other.codigo;
     }
+
+    
 
     @Override
     public int compareTo(Producto t) {
         return COMPARING_CODIGOPRO.compare(this, t);
     }
-    public static final Comparator<Producto> COMPARING_CODIGOPRO = Comparator.comparing(Producto::getCodproducto);
+    public static final Comparator<Producto> COMPARING_CODIGOPRO = Comparator.comparing(Producto::getCodigo);
     
     
 }
