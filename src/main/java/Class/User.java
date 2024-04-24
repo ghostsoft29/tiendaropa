@@ -11,8 +11,8 @@ import javax.swing.JTextArea;
  * @author GHOSTSOFT
  */
 public class User {
-    private static String user,pass;
-    private static int cod,tip,u=1;
+    private static String user,user1,pass;
+    private static int cod,tip,tip1,u=1;
     private boolean a;
     
     private static ArrayList<Integer> codigo = new ArrayList(Arrays.asList(u));
@@ -26,6 +26,8 @@ public class User {
         for(int i=0;i<codigo.size();i++){
             if(usuario.get(i).equals(user) && contraseña.get(i).equals(pass)){
                 a=true;
+                user1=user;
+                tip1=tipo.get(i);
                 break;
             }
         }       
@@ -57,6 +59,10 @@ public class User {
                 list.append(contraseña.get(i)+",");
                 list.append(Integer.toString(tipo.get(i))+"\n");
             }
+    }
+    
+    public void obtener(){
+        
     }
 
     public static String getUser() {
@@ -97,6 +103,22 @@ public class User {
 
     public void setA(boolean a) {
         this.a = a;
+    }
+
+    public static String getUser1() {
+        return user1;
+    }
+
+    public static void setUser1(String user1) {
+        User.user1 = user1;
+    }
+
+    public static int getTip1() {
+        return tip1;
+    }
+
+    public static void setTip1(int tip1) {
+        User.tip1 = tip1;
     }
    
 }
