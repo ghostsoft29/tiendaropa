@@ -40,12 +40,10 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="rmarca" min="-2" max="-2" attributes="0"/>
                           <Component id="rcodproducto" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="rcategoria" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
-                                  <Component id="btnOrdenar" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Component id="rcategoria" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
+                              <Component id="btnOrdenar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="502" max="32767" attributes="0"/>
@@ -119,6 +117,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnCerrar">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="X"/>
       </Properties>
       <Events>

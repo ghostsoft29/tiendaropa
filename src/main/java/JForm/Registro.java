@@ -19,6 +19,7 @@ public class Registro extends javax.swing.JInternalFrame {
     public Registro() {
         initComponents();
         llena();
+        us.listar(txtArea);
     }
     void llena(){
         cbxTipo.removeAllItems();
@@ -35,7 +36,6 @@ public class Registro extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnListar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -46,13 +46,6 @@ public class Registro extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         txtArea = new javax.swing.JTextArea();
         btnCerrar = new javax.swing.JButton();
-
-        btnListar.setText("LISTAR");
-        btnListar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnListarActionPerformed(evt);
-            }
-        });
 
         jLabel1.setText("USUARIO");
 
@@ -73,6 +66,7 @@ public class Registro extends javax.swing.JInternalFrame {
         txtArea.setRows(5);
         jScrollPane2.setViewportView(txtArea);
 
+        btnCerrar.setBackground(new java.awt.Color(255, 51, 51));
         btnCerrar.setText("X");
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,9 +81,7 @@ public class Registro extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(142, 142, 142)
                 .addComponent(btnAgregar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
-                .addComponent(btnListar)
-                .addGap(111, 111, 111))
+                .addGap(111, 340, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,18 +122,12 @@ public class Registro extends javax.swing.JInternalFrame {
                             .addComponent(cbxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAgregar)
-                    .addComponent(btnListar))
+                .addComponent(btnAgregar)
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-        us.listar(txtArea);
-    }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         us.setUser(String.valueOf(txtUser.getText()));
@@ -151,6 +137,7 @@ public class Registro extends javax.swing.JInternalFrame {
         if(us.isA()==false){
             us.insertar();
             us.listar(txtArea);
+            JOptionPane.showMessageDialog(null, "Usuario Registrado");
         }else{
             JOptionPane.showMessageDialog(null, "Existe un Usuario igual");
             txtUser.setText(null);
@@ -167,7 +154,6 @@ public class Registro extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnCerrar;
-    private javax.swing.JButton btnListar;
     private javax.swing.JComboBox<String> cbxTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
