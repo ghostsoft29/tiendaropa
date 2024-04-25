@@ -138,7 +138,7 @@ public class Master extends javax.swing.JFrame {
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
 
         us.setUser(String.valueOf(txtUsuario.getText()));
-        us.setPass(String.valueOf(txtPass1.getText()));
+        us.setPass(String.valueOf(new String(txtPass1.getPassword())));
         us.acceso();
         if(us.isA()){
         Menu mn= new Menu();
