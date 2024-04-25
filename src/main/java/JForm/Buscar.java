@@ -21,6 +21,7 @@ public class Buscar extends javax.swing.JFrame {
      */
     public Buscar() {
         initComponents();
+        this.setTitle("Buscar Producto");
         this.setLocationRelativeTo(null);
     }
 

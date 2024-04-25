@@ -18,6 +18,7 @@ public class Master extends javax.swing.JFrame {
      */
     public Master() {
         initComponents();
+        this.setTitle("Look Sport 1.0");
         this.setLocationRelativeTo(null);
     }
 

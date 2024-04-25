@@ -19,6 +19,7 @@ public class Listar extends javax.swing.JInternalFrame {
      */
     public Listar() {
         initComponents();
+        this.setTitle("Reporte Producto");
     }
 
     /**

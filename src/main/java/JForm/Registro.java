@@ -18,6 +18,7 @@ public class Registro extends javax.swing.JInternalFrame {
      */
     public Registro() {
         initComponents();
+        this.setTitle("Registro Usuario");
         llena();
         us.listar(txtArea);
     }

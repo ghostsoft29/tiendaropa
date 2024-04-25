@@ -17,6 +17,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        this.setTitle("Menu");
         mitRegistrarU.setVisible(false);
         if(us.getTip1()==1){
             mitRegistrarU.setVisible(true);
