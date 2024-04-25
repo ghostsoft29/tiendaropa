@@ -18,6 +18,7 @@ public class Registro extends javax.swing.JInternalFrame {
      */
     public Registro() {
         initComponents();
+        txtArea.disable();
         this.setTitle("Registro Usuario");
         llena();
         us.listar(txtArea);
@@ -65,6 +66,7 @@ public class Registro extends javax.swing.JInternalFrame {
 
         txtArea.setColumns(20);
         txtArea.setRows(5);
+        txtArea.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jScrollPane2.setViewportView(txtArea);
 
         btnCerrar.setBackground(new java.awt.Color(255, 51, 51));

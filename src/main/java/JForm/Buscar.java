@@ -21,6 +21,7 @@ public class Buscar extends javax.swing.JFrame {
      */
     public Buscar() {
         initComponents();
+        txtArea.disable();
         this.setTitle("Buscar Producto");
         this.setLocationRelativeTo(null);
     }
@@ -53,6 +54,7 @@ public class Buscar extends javax.swing.JFrame {
 
         txtArea.setColumns(20);
         txtArea.setRows(5);
+        txtArea.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(txtArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

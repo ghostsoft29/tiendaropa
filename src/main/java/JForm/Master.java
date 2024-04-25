@@ -145,7 +145,7 @@ public class Master extends javax.swing.JFrame {
         mn.show();
         dispose(); 
         }else{
-            JOptionPane.showMessageDialog(null, "No Coincide");
+            JOptionPane.showMessageDialog(null, "Usuario/Contraseña erroneo");
             txtUsuario.setText(null);
             txtPass1.setText(null);
             txtUsuario.requestFocus();

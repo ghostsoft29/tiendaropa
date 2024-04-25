@@ -19,6 +19,7 @@ public class Listar extends javax.swing.JInternalFrame {
      */
     public Listar() {
         initComponents();
+        txtArea.disable();
         this.setTitle("Reporte Producto");
     }
 
@@ -44,6 +45,8 @@ public class Listar extends javax.swing.JInternalFrame {
 
         txtArea.setColumns(20);
         txtArea.setRows(5);
+        txtArea.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtArea.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(txtArea);
 
         btnListar.setText("LISTAR");
