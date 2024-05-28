@@ -123,6 +123,17 @@ public class User {
 
         }
     }
+    
+    public void EliminarUser(JTextArea list){
+        Usuario us=buscar(usuarios,cod1);
+         if(us!=null){
+            usuarios.remove(us);
+            listar1(list);
+            }
+            else{
+            list.setText("No se encontro estudiante");
+            }
+    }
 
     public static int getCod1() {
         return cod1;
