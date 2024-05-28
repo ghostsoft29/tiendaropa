@@ -139,7 +139,7 @@ public class Master extends javax.swing.JFrame {
 
         us.setUser(String.valueOf(txtUsuario.getText()));
         us.setPass(String.valueOf(new String(txtPass1.getPassword())));
-        us.acceso();
+        us.acceso1();
         if(us.isA()){
         Menu mn= new Menu();
         mn.show();

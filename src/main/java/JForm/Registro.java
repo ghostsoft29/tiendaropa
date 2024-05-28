@@ -21,7 +21,7 @@ public class Registro extends javax.swing.JInternalFrame {
         txtArea.disable();
         this.setTitle("Registro Usuario");
         llena();
-        us.listar(txtArea);
+        us.listar1(txtArea);
     }
     void llena(){
         cbxTipo.removeAllItems();
@@ -136,10 +136,10 @@ public class Registro extends javax.swing.JInternalFrame {
         us.setUser(String.valueOf(txtUser.getText()));
         us.setPass(String.valueOf(txtPass.getText()));
         us.setTip(cbxTipo.getSelectedIndex()+1);
-        us.comparadorUser();
+        us.comparadorUser1();
         if(us.isA()==false){
-            us.insertar();
-            us.listar(txtArea);
+            us.insertar1();
+            us.listar1(txtArea);
             JOptionPane.showMessageDialog(null, "Usuario Registrado");
         }else{
             JOptionPane.showMessageDialog(null, "Existe un Usuario igual");

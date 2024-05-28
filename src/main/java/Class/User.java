@@ -5,6 +5,7 @@
 package Class;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import javax.swing.JTextArea;
 /**
  *
@@ -21,6 +22,21 @@ public class User {
     private static ArrayList<Integer> tipo = new ArrayList(Arrays.asList(1));
     
     
+    private static LinkedList<Usuario>usuarios=new LinkedList<>(
+            Arrays.asList(new Usuario(u,"admin","admin2",1)));
+    
+    //acceso con Linked List
+    public void acceso1(){
+        for(Usuario item:usuarios){
+            if(item.getUsuario().equals(user)&&item.getContrasenia().equals(pass)){
+                a=true;
+                user1=item.getUsuario();
+                tip1=item.getCodigo();
+            }
+        }
+    }
+    
+    
     
     public void acceso(){
         for(int i=0;i<codigo.size();i++){
@@ -33,6 +49,17 @@ public class User {
         }       
     }
     
+    
+    public void comparadorUser1(){
+        a=false;
+        for(Usuario item:usuarios){
+            if(item.getUsuario().equals(user)){
+                a=true;
+                break;
+            }
+        }
+    }
+    
     public void comparadorUser(){
         a=false;
         for(int i=0;i<codigo.size();i++){
@@ -43,12 +70,28 @@ public class User {
         }     
     }
     
+    //insertar en linkedlist
+    public void insertar1(){
+        u=u+1;
+        Usuario en=new Usuario(u,user,pass,tip);
+        usuarios.addLast(en);
+    }
+    
     public void insertar(){
         u=u+1;
         codigo.add(u);
         usuario.add(user);
         contraseña.add(pass);
         tipo.add(tip);
+    }
+    
+    
+    public void listar1(JTextArea list){
+        list.setText("LISTA DE Usuarios\n");
+        for(Usuario item:usuarios){
+            list.append("\n"+item);
+
+        }
     }
     
     public void listar(JTextArea list){
