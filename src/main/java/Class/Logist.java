@@ -96,6 +96,8 @@ public class Logist {
             }       
     }
     
+    
+    
     public static int getSel() {
         return sel;
     }
