@@ -13,7 +13,7 @@ import javax.swing.JTextArea;
  */
 public class User {
     private static String user,user1,pass;
-    private static int cod,tip,tip1,u=1;
+    private static int cod,cod1,tip,tip1,u=1;
     private boolean a;
     
     private static ArrayList<Integer> codigo = new ArrayList(Arrays.asList(u));
@@ -23,7 +23,7 @@ public class User {
     
     
     private static LinkedList<Usuario>usuarios=new LinkedList<>(
-            Arrays.asList(new Usuario(u,"admin","admin2",1)));
+            Arrays.asList(new Usuario(u,"admin","admin",1)));
     
     //acceso con Linked List
     public void acceso1(){
@@ -104,10 +104,34 @@ public class User {
             }
     }
     
-    public void obtener(){
-        
+    public static Usuario buscar(LinkedList<Usuario>usuarios,int data){
+        for(Usuario item:usuarios){
+            if(item.getCodigo()==data)
+                return item;
+        }
+        return null;
+    } 
+    public void ModificarCod(JTextArea list){
+        Usuario info=buscar(usuarios,cod1);
+        if(info==null)
+            list.setText("No se encuentra");
+        else{
+           info.setUsuario(user);
+           info.setContrasenia(pass);
+           info.setTipo(tip);  
+           listar1(list);
+
+        }
     }
 
+    public static int getCod1() {
+        return cod1;
+    }
+
+    public static void setCod1(int cod1) {
+        User.cod1 = cod1;
+    }
+  
     public static String getUser() {
         return user;
     }
