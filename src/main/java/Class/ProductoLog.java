@@ -31,6 +31,31 @@ public  String codproducto,detalle,marca,categoria;
         }
     }
     
+    public void ModificarProduc(JTextArea list){
+        Producto info=buscar(productos,codproducto);
+        if(info==null)
+            list.setText("No se encuentra");
+        else{
+           info.setDetalle(detalle);
+           info.setMarca(marca);
+           info.setCategoria(categoria);
+           info.setPrecio(precio);
+           info.setCantidad(cantidad);
+           listar(list);
+        }
+    }
+    
+    public void EliminarProduc(JTextArea list){
+        Producto us=buscar(productos,codproducto);
+         if(us!=null){
+            productos.remove(us);
+            listar(list);
+            }
+            else{
+            list.setText("No se encontro estudiante");
+            }
+    }
+    
     public static Producto buscar(LinkedList<Producto>productos,String data){
         for(Producto item:productos){
             if(item.getCodproducto().equals(data))

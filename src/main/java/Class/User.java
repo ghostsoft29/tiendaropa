@@ -21,7 +21,7 @@ public class User {
     private static ArrayList<String> contraseña = new ArrayList(Arrays.asList("admin"));
     private static ArrayList<Integer> tipo = new ArrayList(Arrays.asList(1));
     
-    
+    //nuevo
     private static LinkedList<Usuario>usuarios=new LinkedList<>(
             Arrays.asList(new Usuario(u,"admin","admin",1)));
     
