@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class RegistroU extends javax.swing.JInternalFrame {
     User us=new User();
+    VentaL vl=new VentaL();
     /**
      * Creates new form Registro
      */

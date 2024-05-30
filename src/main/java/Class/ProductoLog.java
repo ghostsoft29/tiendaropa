@@ -13,9 +13,9 @@ import javax.swing.JTextArea;
  */
 public class ProductoLog {
 public static LinkedList<Producto>productos=new LinkedList<>();
-public static int u=0,cantidad;
-public static double precio;
-public String codproducto,detalle,marca,categoria;
+public  int u=0,cantidad;
+public  double precio;
+public  String codproducto,detalle,marca,categoria;
 
 //Agregar Productos
     public void AgregarProductos(){
@@ -28,25 +28,41 @@ public String codproducto,detalle,marca,categoria;
         list.setText("LISTA DE Productos\n");
         for(Producto item:productos){
             list.append("\n"+item);
-
         }
     }
+    
+    public static Producto buscar(LinkedList<Producto>productos,String data){
+        for(Producto item:productos){
+            if(item.getCodproducto().equals(data))
+                return item;
+        }
+        return null;
+    } 
+    
+    public void CambiarCant(){
+        Producto us=buscar(productos,codproducto);
+         if(us!=null){
+            us.setCantidad(us.getCantidad()-cantidad);
+            
+            }
+    }
 
-    public static int getCantidad() {
+    public int getCantidad() {
         return cantidad;
     }
 
-    public static void setCantidad(int cantidad) {
-        ProductoLog.cantidad = cantidad;
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
-    public static double getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public static void setPrecio(double precio) {
-        ProductoLog.precio = precio;
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
+
 
     public String getCodproducto() {
         return codproducto;

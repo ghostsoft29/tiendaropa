@@ -4,24 +4,23 @@
  */
 package JForm;
 
-import Class.Logist;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
+import Class.*;
 
 /**
  *
  * @author GHOSTSOFT
  */
 public class Cliente extends javax.swing.JFrame {
-    Logist l=new Logist(); 
-    
+    ProductoLog pl=new ProductoLog(); 
+    VentaL vl=new VentaL();
     
     public Cliente() {
        
             initComponents();
-            txtArea.disable();  
+            pl.listar(txtArea);
+            
+            
     }
 
     /**
@@ -37,14 +36,13 @@ public class Cliente extends javax.swing.JFrame {
         txtArea = new javax.swing.JTextArea();
         btnComprar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        Cantidad = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtCompra = new javax.swing.JTextArea();
+        txtCantidad = new javax.swing.JTextField();
         txtCodigo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        btnListar = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtVenta = new javax.swing.JTextArea();
 
         txtArea.setColumns(20);
         txtArea.setRows(5);
@@ -59,13 +57,20 @@ public class Cliente extends javax.swing.JFrame {
 
         jLabel1.setText("Comprar por Codigo del Producto");
 
-        txtCompra.setColumns(20);
-        txtCompra.setRows(5);
-        jScrollPane1.setViewportView(txtCompra);
-
         jLabel2.setText("Codigo Producto");
 
         jLabel3.setText("Cantidad");
+
+        btnListar.setText("LISTAR");
+        btnListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarActionPerformed(evt);
+            }
+        });
+
+        txtVenta.setColumns(20);
+        txtVenta.setRows(5);
+        jScrollPane3.setViewportView(txtVenta);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -74,7 +79,9 @@ public class Cliente extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1056, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1056, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(32, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel1)
@@ -85,12 +92,14 @@ public class Cliente extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(txtCodigo, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Cantidad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtCantidad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(24, 24, 24)
                         .addComponent(btnComprar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(56, 56, 56)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                        .addComponent(btnListar)
+                        .addGap(83, 83, 83))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,21 +116,37 @@ public class Cliente extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnComprar)
                             .addComponent(jLabel3)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(56, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnListar))))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
+        vl.setCodproducto(String.valueOf(txtCodigo.getText()));
+        vl.setCantidad(Integer.parseInt(txtCantidad.getText()));
+        pl.setCodproducto(String.valueOf(txtCodigo.getText()));
+        pl.setCantidad(Integer.parseInt(txtCantidad.getText()));
+        vl.setEstado("En Proceso");
+        vl.AgregarVenta();
+        pl.CambiarCant();
+        
+        pl.listar(txtArea);
+        vl.listar(txtVenta);
         
     }//GEN-LAST:event_btnComprarActionPerformed
+
+    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
+        vl.listar(txtArea);
+    }//GEN-LAST:event_btnListarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,15 +184,16 @@ public class Cliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Cantidad;
     private javax.swing.JButton btnComprar;
+    private javax.swing.JButton btnListar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea txtArea;
+    private javax.swing.JTextField txtCantidad;
     private javax.swing.JTextField txtCodigo;
-    private javax.swing.JTextArea txtCompra;
+    private javax.swing.JTextArea txtVenta;
     // End of variables declaration//GEN-END:variables
 }

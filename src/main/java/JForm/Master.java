@@ -41,6 +41,7 @@ public class Master extends javax.swing.JFrame {
         txtPass1 = new javax.swing.JPasswordField();
         btnVer = new javax.swing.JButton();
         btnOcultar = new javax.swing.JButton();
+        btnCliente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,11 +76,22 @@ public class Master extends javax.swing.JFrame {
             }
         });
 
+        btnCliente.setText("SOY CLIENTE");
+        btnCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(222, 222, 222)
+                .addComponent(btnIngresar)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(98, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -104,11 +116,10 @@ public class Master extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel2))
                             .addComponent(jLabel1))
-                        .addGap(130, 130, 130))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(btnIngresar)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(130, 130, 130))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnCliente)
+                        .addGap(25, 25, 25))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,7 +140,9 @@ public class Master extends javax.swing.JFrame {
                     .addComponent(btnVer))
                 .addGap(36, 36, 36)
                 .addComponent(btnIngresar)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnCliente)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -164,6 +177,12 @@ public class Master extends javax.swing.JFrame {
         btnOcultar.setVisible(false);
         txtPass1.setEchoChar('*');
     }//GEN-LAST:event_btnOcultarActionPerformed
+
+    private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
+        Cliente m=new Cliente();
+        m.show();
+        
+    }//GEN-LAST:event_btnClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,6 +220,7 @@ public class Master extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCliente;
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnOcultar;
     private javax.swing.JButton btnVer;

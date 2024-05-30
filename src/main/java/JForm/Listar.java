@@ -13,6 +13,7 @@ import java.util.logging.Logger;
  */
 public class Listar extends javax.swing.JInternalFrame {
     Logist l=new Logist();
+    
     int a=0;
     /**
      * Creates new form Listar
