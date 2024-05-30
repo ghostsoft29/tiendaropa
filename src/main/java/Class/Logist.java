@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTextArea;
@@ -22,6 +23,8 @@ public class Logist {
     
     public static int sel;
     public static String bcod;
+    
+    public static LinkedList<Producto>productos=new LinkedList<>();
     
     public static int totalLinea(File ff) {
         FileReader fr;
@@ -60,12 +63,14 @@ public class Logist {
                     double precio=Double.parseDouble(linea[5]);
                     int cantidad = Integer.parseInt(linea[6]);
                     malla[c] = new Producto(codigo, codproducto, detalle, marca,categoria,precio,cantidad);
+                    Producto en=new Producto(codigo,codproducto,detalle,marca,categoria,precio,cantidad);
+                    productos.addLast(en);
                 }
                 c++;
                 linea1 = br.readLine();
                 
-                
             }
+            
             fr.close();
             switch(sel){
                     case 1:{
@@ -96,7 +101,7 @@ public class Logist {
             }       
     }
     
-    
+    //Visualizar Listar
     
     public static int getSel() {
         return sel;
@@ -114,5 +119,4 @@ public class Logist {
         Logist.bcod = bcod;
     }
     
-   
 }

@@ -15,18 +15,13 @@ import java.util.logging.Logger;
  * @author GHOSTSOFT
  */
 public class Cliente extends javax.swing.JFrame {
-    Logist l=new Logist();    
+    Logist l=new Logist(); 
+    
     
     public Cliente() {
-        try {
+       
             initComponents();
-            int a=1;
-            l.setSel(a);
-            l.malla1(txtArea);
-        } catch (IOException ex) {
-            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+            txtArea.disable();  
     }
 
     /**
