@@ -18,6 +18,7 @@ public class EliminarP extends javax.swing.JInternalFrame {
     public EliminarP() {
         initComponents();
         pl.listar(txtArea);
+        txtArea.disable();
     }
 
     /**
@@ -47,6 +48,7 @@ public class EliminarP extends javax.swing.JInternalFrame {
 
         txtArea.setColumns(20);
         txtArea.setRows(5);
+        txtArea.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(txtArea);
 
         btnCerrar.setBackground(new java.awt.Color(255, 51, 51));

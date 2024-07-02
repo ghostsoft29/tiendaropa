@@ -10,6 +10,7 @@ package Class;
  */
 public class Venta {
     private int codv;
+    private int codc;
     private String codp;
     private int cantidad;
     private String estado;
@@ -21,6 +22,13 @@ public class Venta {
         this.estado = estado;
     }
 
+    public int getCodc() {
+        return codc;
+    }
+
+    public void setCodc(int codc) {
+        this.codc = codc;
+    }
     public int getCodv() {
         return codv;
     }

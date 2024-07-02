@@ -41,9 +41,9 @@ public class VentaLog{
         }
     }
 
-    public Venta dequeue(){
+    public Venta dequeue(JTextArea list){
         if(ventacola.size()==0){
-            System.out.println("LA cola esta sin elementos");
+            list.setText("YA NO HAY ELEMENTOS\n");
             return null;
         }
         else{

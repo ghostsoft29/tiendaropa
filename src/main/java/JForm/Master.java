@@ -42,6 +42,7 @@ public class Master extends javax.swing.JFrame {
         btnVer = new javax.swing.JButton();
         btnOcultar = new javax.swing.JButton();
         btnCliente = new javax.swing.JButton();
+        btnReCli = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +84,8 @@ public class Master extends javax.swing.JFrame {
             }
         });
 
+        btnReCli.setText("REGISTRARSE CLIENTE");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,19 +95,23 @@ public class Master extends javax.swing.JFrame {
                 .addComponent(btnIngresar)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(98, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(jLabel3)
-                                .addGap(27, 27, 27)
-                                .addComponent(txtUsuario))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGap(28, 28, 28)
+                                    .addComponent(jLabel3)
+                                    .addGap(27, 27, 27)
+                                    .addComponent(txtUsuario))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel4)
+                                    .addGap(27, 27, 27)
+                                    .addComponent(txtPass1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(27, 27, 27)
-                                .addComponent(txtPass1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnReCli)
+                                .addGap(171, 171, 171)))
                         .addGap(12, 12, 12)
                         .addComponent(btnVer)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -141,7 +148,9 @@ public class Master extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(btnIngresar)
                 .addGap(18, 18, 18)
-                .addComponent(btnCliente)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCliente)
+                    .addComponent(btnReCli))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -223,6 +232,7 @@ public class Master extends javax.swing.JFrame {
     private javax.swing.JButton btnCliente;
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnOcultar;
+    private javax.swing.JButton btnReCli;
     private javax.swing.JButton btnVer;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

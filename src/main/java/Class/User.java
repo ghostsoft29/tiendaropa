@@ -131,7 +131,7 @@ public class User {
             listar1(list);
             }
             else{
-            list.setText("No se encontro estudiante");
+            list.setText("No se encontro usuario");
             }
     }
 

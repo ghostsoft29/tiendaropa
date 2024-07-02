@@ -157,7 +157,15 @@ public class Listar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarActionPerformed
-        
+        try {
+            if(rcodproducto.isSelected()){
+                a=2;
+            }
+            l.setSel(a);
+            l.malla1(txtArea);
+        } catch (IOException ex) {
+            Logger.getLogger(Listar.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnOrdenarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed

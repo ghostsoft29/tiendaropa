@@ -19,6 +19,9 @@ public class AVentas extends javax.swing.JInternalFrame {
     public AVentas() {
         initComponents();
         vl.listar1(txtArea);
+        txtArea.disable();
+        txtCodigoV.disable();
+        txtCodigoV.setText(String.valueOf(vl.getCodv()+1));
     }
 
     /**
@@ -35,16 +38,17 @@ public class AVentas extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         txtCodigoV = new javax.swing.JTextField();
         btnAtender = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         btnCerrar1 = new javax.swing.JButton();
         btnListar = new javax.swing.JButton();
 
         txtArea.setColumns(20);
         txtArea.setRows(5);
+        txtArea.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(txtArea);
 
         jLabel1.setText("CODIGO VENTA");
+
+        txtCodigoV.setDisabledTextColor(new java.awt.Color(0, 0, 0));
 
         btnAtender.setText("ATENDER");
         btnAtender.addActionListener(new java.awt.event.ActionListener() {
@@ -52,10 +56,6 @@ public class AVentas extends javax.swing.JInternalFrame {
                 btnAtenderActionPerformed(evt);
             }
         });
-
-        jButton2.setText("jButton2");
-
-        jButton3.setText("jButton3");
 
         btnCerrar1.setBackground(new java.awt.Color(255, 51, 51));
         btnCerrar1.setText("X");
@@ -77,30 +77,21 @@ public class AVentas extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(jButton2)
-                        .addGap(87, 87, 87)
-                        .addComponent(jButton3))
+                        .addComponent(jLabel1)
+                        .addGap(32, 32, 32)
+                        .addComponent(txtCodigoV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(68, 68, 68)
+                        .addComponent(btnAtender))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(159, 159, 159)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtCodigoV, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(37, 37, 37)
-                                .addComponent(btnAtender))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
-                                .addComponent(btnCerrar1)))))
-                .addGap(14, 14, 14))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnListar)
-                .addGap(30, 30, 30))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnListar)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
+                        .addComponent(btnCerrar1)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,30 +103,28 @@ public class AVentas extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnCerrar1)))
-                .addGap(41, 41, 41)
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtCodigoV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAtender))
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addGap(18, 18, 18)
+                .addGap(50, 50, 50)
                 .addComponent(btnListar)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAtenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtenderActionPerformed
+        
         vl.setCodv(Integer.parseInt(txtCodigoV.getText()));
         vl.setEstado("Atendido");
         vl.CambiarDetalle();
-        vl.dequeue();
+        vl.dequeue(txtArea);
         JOptionPane.showMessageDialog(null, "Venta Atendida");
         vl.listar1(txtArea);
+        txtCodigoV.setText(String.valueOf(vl.getCodv()+1));
     }//GEN-LAST:event_btnAtenderActionPerformed
 
     private void btnCerrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrar1ActionPerformed
@@ -151,8 +140,6 @@ public class AVentas extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnAtender;
     private javax.swing.JButton btnCerrar1;
     private javax.swing.JButton btnListar;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtArea;
