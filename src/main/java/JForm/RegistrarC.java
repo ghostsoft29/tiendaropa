@@ -18,6 +18,8 @@ public class RegistrarC extends javax.swing.JFrame {
      */
     public RegistrarC() {
         initComponents();
+        this.setTitle("Registro Cliente");
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -39,7 +41,7 @@ public class RegistrarC extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Usuario");
 
@@ -108,6 +110,7 @@ public class RegistrarC extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        RegistrarC rc=new RegistrarC();
         cl.setName(String.valueOf(txtName.getText()));
         cl.setUser(String.valueOf(txtUser.getText()));
         cl.setPass(String.valueOf(txtPass.getText()));
@@ -116,6 +119,8 @@ public class RegistrarC extends javax.swing.JFrame {
         if(cl.isA()==false){
             cl.insertar1();
             JOptionPane.showMessageDialog(null, "Usuario Registrado");
+            dispose();
+            
         }else{
             JOptionPane.showMessageDialog(null, "Existe un Usuario igual");
             txtName.setText(null);

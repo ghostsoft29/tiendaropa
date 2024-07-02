@@ -6,6 +6,7 @@ package Class;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -44,6 +45,14 @@ public class ClienteLog {
         clientes.addLast(en);
     }
 
+    public void listar1(JTextArea list){
+        list.setText("LISTA DE CLIENTES\n");
+        for(Cliente item:clientes){
+            list.append("\n"+item);
+
+        }
+    }
+    
     public static String getUser() {
         return user;
     }

@@ -44,6 +44,7 @@ public class Menu extends javax.swing.JFrame {
         lblUsuario = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         mitRegistrarU = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -78,6 +79,14 @@ public class Menu extends javax.swing.JFrame {
         lblUsuario.setText("1234");
 
         jMenu1.setText("Archivo");
+
+        jMenuItem9.setText("Cliente");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem9);
 
         jMenu4.setText("Usuario");
 
@@ -253,6 +262,12 @@ public class Menu extends javax.swing.JFrame {
         re.show();
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        VerC re=new VerC();
+        jpanel1.add(re);
+        re.show();
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -304,6 +319,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JDesktopPane jpanel1;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JMenuItem mitRegistrarU;

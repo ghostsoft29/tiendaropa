@@ -11,12 +11,12 @@ import javax.swing.JOptionPane;
  *
  * @author GHOSTSOFT
  */
-public class Master extends javax.swing.JFrame {
-    User us=new User();
+public class MasterC extends javax.swing.JFrame {
+    ClienteLog cl=new ClienteLog();
     /**
-     * Creates new form Master
+     * Creates new form MasterC
      */
-    public Master() {
+    public MasterC() {
         initComponents();
         this.setTitle("Look Sport 1.0");
         btnOcultar.setVisible(false);
@@ -42,7 +42,6 @@ public class Master extends javax.swing.JFrame {
         btnVer = new javax.swing.JButton();
         btnOcultar = new javax.swing.JButton();
         btnCliente = new javax.swing.JButton();
-        btnReCli = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,17 +76,10 @@ public class Master extends javax.swing.JFrame {
             }
         });
 
-        btnCliente.setText("SOY CLIENTE");
+        btnCliente.setText("SOY ADMINISTRADOR");
         btnCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClienteActionPerformed(evt);
-            }
-        });
-
-        btnReCli.setText("REGISTRARSE CLIENTE");
-        btnReCli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnReCliActionPerformed(evt);
             }
         });
 
@@ -96,47 +88,44 @@ public class Master extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(btnIngresar)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+                .addContainerGap(112, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGap(28, 28, 28)
-                                    .addComponent(jLabel3)
-                                    .addGap(27, 27, 27)
-                                    .addComponent(txtUsuario))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
-                                    .addGap(27, 27, 27)
-                                    .addComponent(txtPass1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnReCli)
-                                .addGap(171, 171, 171)))
-                        .addGap(12, 12, 12)
-                        .addComponent(btnVer)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnOcultar)
-                        .addGap(139, 139, 139))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addGap(28, 28, 28)
+                                            .addComponent(jLabel3)
+                                            .addGap(27, 27, 27)
+                                            .addComponent(txtUsuario))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel4)
+                                            .addGap(27, 27, 27)
+                                            .addComponent(txtPass1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(12, 12, 12)
+                                    .addComponent(btnVer)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnOcultar)
+                                    .addGap(9, 9, 9))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jLabel2))
+                                    .addComponent(jLabel1)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel2))
-                            .addComponent(jLabel1))
-                        .addGap(130, 130, 130))
+                                .addGap(124, 124, 124)
+                                .addComponent(btnIngresar)))
+                        .addGap(116, 116, 116))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnCliente)
-                        .addGap(25, 25, 25))))
+                        .addGap(19, 19, 19))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(38, 38, 38)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
@@ -152,11 +141,9 @@ public class Master extends javax.swing.JFrame {
                     .addComponent(btnVer))
                 .addGap(36, 36, 36)
                 .addComponent(btnIngresar)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnReCli)
-                    .addComponent(btnCliente))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addComponent(btnCliente)
+                .addGap(16, 16, 16))
         );
 
         pack();
@@ -164,20 +151,20 @@ public class Master extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
 
-        us.setUser(String.valueOf(txtUsuario.getText()));
-        us.setPass(String.valueOf(new String(txtPass1.getPassword())));
-        us.acceso1();
-        if(us.isA()){
-        Menu mn= new Menu();
-        mn.show();
-        dispose(); 
+        cl.setUser(String.valueOf(txtUsuario.getText()));
+        cl.setPass(String.valueOf(new String(txtPass1.getPassword())));
+        cl.acceso1();
+        if(cl.isA()){
+            //Menu mn= new Menu();
+            //mn.show();
+            dispose();
         }else{
             JOptionPane.showMessageDialog(null, "Usuario/Contraseña erroneo");
             txtUsuario.setText(null);
             txtPass1.setText(null);
             txtUsuario.requestFocus();
         }
-        
+
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void btnVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerActionPerformed
@@ -193,16 +180,11 @@ public class Master extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOcultarActionPerformed
 
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
-        MasterC m=new MasterC();
+        Master m=new Master();
         m.show();
         dispose();
-        
-    }//GEN-LAST:event_btnClienteActionPerformed
 
-    private void btnReCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReCliActionPerformed
-        RegistrarC m=new RegistrarC();
-        m.show();
-    }//GEN-LAST:event_btnReCliActionPerformed
+    }//GEN-LAST:event_btnClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,20 +203,20 @@ public class Master extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Master.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MasterC.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Master.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MasterC.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Master.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MasterC.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Master.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MasterC.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Master().setVisible(true);
+                new MasterC().setVisible(true);
             }
         });
     }
@@ -243,7 +225,6 @@ public class Master extends javax.swing.JFrame {
     private javax.swing.JButton btnCliente;
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnOcultar;
-    private javax.swing.JButton btnReCli;
     private javax.swing.JButton btnVer;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
