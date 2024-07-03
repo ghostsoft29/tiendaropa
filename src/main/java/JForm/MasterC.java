@@ -155,8 +155,8 @@ public class MasterC extends javax.swing.JFrame {
         cl.setPass(String.valueOf(new String(txtPass1.getPassword())));
         cl.acceso1();
         if(cl.isA()){
-            //Menu mn= new Menu();
-            //mn.show();
+            Venta mn= new Venta();
+            mn.show();
             dispose();
         }else{
             JOptionPane.showMessageDialog(null, "Usuario/Contraseña erroneo");

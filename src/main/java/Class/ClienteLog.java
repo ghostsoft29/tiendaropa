@@ -14,7 +14,7 @@ import javax.swing.JTextArea;
  */
 public class ClienteLog {
     private static String user,user1,pass,name;
-    private static int cod,cod1,tip,tip1,edad,u;
+    private static int cod,cod1,tip,tip1,edad,u,uu;
     private boolean a;
     
     private static LinkedList<Cliente>clientes=new LinkedList<>();
@@ -24,7 +24,7 @@ public class ClienteLog {
             if(item.getCliente().equals(user)&&item.getContrasenia().equals(pass)){
                 a=true;
                 user1=item.getCliente();
-                tip1=item.getCodigo();
+                uu=item.getCodigo();
             }
         }
     }
@@ -52,7 +52,14 @@ public class ClienteLog {
 
         }
     }
-    
+
+    public static int getUu() {
+        return uu;
+    }
+
+    public static void setUu(int uu) {
+        ClienteLog.uu = uu;
+    }
     public static String getUser() {
         return user;
     }

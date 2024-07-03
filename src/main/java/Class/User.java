@@ -31,7 +31,7 @@ public class User {
             if(item.getUsuario().equals(user)&&item.getContrasenia().equals(pass)){
                 a=true;
                 user1=item.getUsuario();
-                tip1=item.getCodigo();
+                tip1=item.getTipo();
             }
         }
     }

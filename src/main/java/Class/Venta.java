@@ -15,12 +15,15 @@ public class Venta {
     private int cantidad;
     private String estado;
 
-    public Venta(int codv, String codp, int cantidad, String estado) {
+    public Venta(int codv, int codc, String codp, int cantidad, String estado) {
         this.codv = codv;
+        this.codc = codc;
         this.codp = codp;
         this.cantidad = cantidad;
         this.estado = estado;
     }
+
+    
 
     public int getCodc() {
         return codc;
@@ -63,7 +66,7 @@ public class Venta {
 
     @Override
     public String toString() {
-        return + codv + " " + codp + " " + cantidad + " " + estado;
+        return + codv +" "+ codc +" " + codp + " " + cantidad + " " + estado;
     }
     
     

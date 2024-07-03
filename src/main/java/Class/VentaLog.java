@@ -15,12 +15,12 @@ import javax.swing.JTextArea;
 public class VentaLog{
     public static LinkedList<Venta>ventas=new LinkedList<>();
     public static LinkedList<Venta>ventacola=new LinkedList<>();
-    public int u=0,cantidad,codv;
-    public String codproducto,estado;
+    public static int u=0,cantidad,codv,codc;
+    public static String codproducto,estado;
     
     public void AgregarVenta(){
         u=u+1;
-        Venta en=new Venta(u,codproducto,cantidad,estado);
+        Venta en=new Venta(u,codc,codproducto,cantidad,estado);
         ventas.addLast(en);
         ventacola.addLast(en);
     }
@@ -70,6 +70,15 @@ public class VentaLog{
         }
         return null;
     } 
+
+    public int getCodc() {
+        return codc;
+    }
+
+    public void setCodc(int codc) {
+        this.codc = codc;
+    }
+    
     
     public int getCantidad() {
         return cantidad;
