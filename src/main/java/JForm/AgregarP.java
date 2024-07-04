@@ -5,13 +5,16 @@
 package JForm;
 
 import Class.ProductoLog;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author GHOSTSOFT
  */
 public class AgregarP extends javax.swing.JInternalFrame {
-    ProductoLog pl=new ProductoLog();
+
+    ProductoLog pl = new ProductoLog();
+
     /**
      * Creates new form AgregarP
      */
@@ -19,7 +22,7 @@ public class AgregarP extends javax.swing.JInternalFrame {
         initComponents();
         pl.listar(txtArea);
         txtArea.disable();
-        
+
     }
 
     /**
@@ -156,14 +159,44 @@ public class AgregarP extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        pl.setCodproducto(String.valueOf(txtCodip.getText()));
-        pl.setDetalle(String.valueOf(txtDetalle.getText()));
-        pl.setMarca(String.valueOf(txtMarca.getText()));
-        pl.setCategoria(String.valueOf(txtCategoria.getText()));
-        pl.setPrecio(Double.parseDouble(txtPrecio.getText()));
-        pl.setCantidad(Integer.parseInt(txtCantidad.getText()));
-        pl.AgregarProductos();
-        pl.listar(txtArea);
+
+        boolean valid = true;
+        String numeroText = txtCantidad.getText();
+        String doubleText = txtPrecio.getText();
+
+        if (!numeroText.matches("\\d+")) {
+            valid = false;
+            JOptionPane.showMessageDialog(null, "cantidad no valida");
+        }
+        if (!doubleText.matches("\\d*\\.?\\d+")) {
+            valid = false;
+            JOptionPane.showMessageDialog(null, "Precio no valido");
+        }
+        if (valid) {
+            pl.setCodproducto(String.valueOf(txtCodip.getText()));
+            pl.setDetalle(String.valueOf(txtDetalle.getText()));
+            pl.setMarca(String.valueOf(txtMarca.getText()));
+            pl.setCategoria(String.valueOf(txtCategoria.getText()));
+            pl.setPrecio(Double.parseDouble(txtPrecio.getText()));
+            pl.setCantidad(Integer.parseInt(txtCantidad.getText()));
+            pl.comparadorUser1();
+            if (pl.isA() == false) {
+                pl.AgregarProductos();
+                pl.listar(txtArea);
+                JOptionPane.showMessageDialog(null, "Producto Registrado");
+            } else {
+                JOptionPane.showMessageDialog(null, "Existe un Producto igual");
+                txtCodip.setText(null);
+                txtDetalle.setText(null);
+                txtMarca.setText(null);
+                txtCategoria.setText(null);
+                txtPrecio.setText(null);
+                txtCantidad.setText(null);
+                txtCodip.requestFocus();
+            }
+        }
+
+
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed

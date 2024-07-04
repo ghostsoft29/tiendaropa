@@ -45,7 +45,6 @@ public class Venta extends javax.swing.JFrame {
         btnListar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtVenta = new javax.swing.JTextArea();
-        btnCerrar = new javax.swing.JButton();
         btnCerrar1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
@@ -77,14 +76,6 @@ public class Venta extends javax.swing.JFrame {
         txtVenta.setColumns(20);
         txtVenta.setRows(5);
         jScrollPane3.setViewportView(txtVenta);
-
-        btnCerrar.setBackground(new java.awt.Color(255, 51, 51));
-        btnCerrar.setText("X");
-        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrarActionPerformed(evt);
-            }
-        });
 
         btnCerrar1.setBackground(new java.awt.Color(255, 51, 51));
         btnCerrar1.setText("X");
@@ -137,11 +128,6 @@ public class Venta extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addComponent(btnCerrar1)
                             .addGap(19, 19, 19)))))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(558, 558, 558)
-                    .addComponent(btnCerrar)
-                    .addContainerGap(558, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,11 +159,6 @@ public class Venta extends javax.swing.JFrame {
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnListar))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(284, 284, 284)
-                    .addComponent(btnCerrar)
-                    .addContainerGap(310, Short.MAX_VALUE)))
         );
 
         pack();
@@ -202,10 +183,6 @@ public class Venta extends javax.swing.JFrame {
         pl.listar(txtArea);
         vl.listar(txtVenta);
     }//GEN-LAST:event_btnListarActionPerformed
-
-    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
-        hide();
-    }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnCerrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrar1ActionPerformed
         MasterC ms=new MasterC();
@@ -250,7 +227,6 @@ public class Venta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnCerrar1;
     private javax.swing.JButton btnComprar;
     private javax.swing.JButton btnListar;

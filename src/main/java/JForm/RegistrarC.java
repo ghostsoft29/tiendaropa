@@ -110,7 +110,6 @@ public class RegistrarC extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        RegistrarC rc=new RegistrarC();
         cl.setName(String.valueOf(txtName.getText()));
         cl.setUser(String.valueOf(txtUser.getText()));
         cl.setPass(String.valueOf(txtPass.getText()));

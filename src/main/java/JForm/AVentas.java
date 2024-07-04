@@ -21,7 +21,9 @@ public class AVentas extends javax.swing.JInternalFrame {
         vl.listar1(txtArea);
         txtArea.disable();
         txtCodigoV.disable();
-        txtCodigoV.setText(String.valueOf(vl.getCodv()+1));
+        vl.ini();
+        txtCodigoV.setText(String.valueOf(vl.getCodv1()));
+        txtCodVf.setText(String.valueOf(vl.getCodvf1()));
     }
 
     /**
@@ -40,6 +42,9 @@ public class AVentas extends javax.swing.JInternalFrame {
         btnAtender = new javax.swing.JButton();
         btnCerrar1 = new javax.swing.JButton();
         btnListar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        txtCodVf = new javax.swing.JTextField();
 
         txtArea.setColumns(20);
         txtArea.setRows(5);
@@ -50,7 +55,7 @@ public class AVentas extends javax.swing.JInternalFrame {
 
         txtCodigoV.setDisabledTextColor(new java.awt.Color(0, 0, 0));
 
-        btnAtender.setText("ATENDER");
+        btnAtender.setText("ATENDER COLA");
         btnAtender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtenderActionPerformed(evt);
@@ -72,26 +77,44 @@ public class AVentas extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton1.setText("PRECIO");
+
+        jButton2.setText("ATENDER PILA");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(75, 75, 75)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnListar)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(32, 32, 32)
-                        .addComponent(txtCodigoV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68)
-                        .addComponent(btnAtender))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtCodigoV)
+                            .addComponent(txtCodVf))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2)
+                            .addComponent(btnAtender))
+                        .addGap(110, 110, 110)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnListar)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 96, Short.MAX_VALUE)
+                        .addComponent(btnCerrar1))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(btnCerrar1)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                        .addComponent(jButton1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,13 +125,23 @@ public class AVentas extends javax.swing.JInternalFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btnCerrar1)))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtCodigoV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAtender))
-                .addGap(50, 50, 50)
+                        .addComponent(btnCerrar1)
+                        .addGap(19, 19, 19)
+                        .addComponent(jButton1)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtCodigoV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAtender))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2)
+                            .addComponent(txtCodVf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(jLabel1)))
+                .addGap(21, 21, 21)
                 .addComponent(btnListar)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
@@ -124,7 +157,7 @@ public class AVentas extends javax.swing.JInternalFrame {
         vl.dequeue(txtArea);
         JOptionPane.showMessageDialog(null, "Venta Atendida");
         vl.listar1(txtArea);
-        txtCodigoV.setText(String.valueOf(vl.getCodv()+1));
+        txtCodigoV.setText(String.valueOf(vl.getCodv1()));
     }//GEN-LAST:event_btnAtenderActionPerformed
 
     private void btnCerrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrar1ActionPerformed
@@ -135,14 +168,27 @@ public class AVentas extends javax.swing.JInternalFrame {
         vl.listar1(txtArea);
     }//GEN-LAST:event_btnListarActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        vl.setCodv(Integer.parseInt(txtCodVf.getText()));
+        vl.setEstado("Atendido");
+        vl.CambiarDetalle();
+        vl.pop(txtArea);
+        JOptionPane.showMessageDialog(null, "Venta Atendida");
+        vl.listar1(txtArea);
+        txtCodVf.setText(String.valueOf(vl.getCodvf1()));
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtender;
     private javax.swing.JButton btnCerrar1;
     private javax.swing.JButton btnListar;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtArea;
+    private javax.swing.JTextField txtCodVf;
     private javax.swing.JTextField txtCodigoV;
     // End of variables declaration//GEN-END:variables
 }

@@ -16,6 +16,7 @@ public static LinkedList<Producto>productos=new LinkedList<>();
 public  int u=0,cantidad;
 public  double precio;
 public  String codproducto,detalle,marca,categoria;
+private boolean a;
 
 //Agregar Productos
     public void AgregarProductos(){
@@ -72,6 +73,23 @@ public  String codproducto,detalle,marca,categoria;
             }
     }
 
+    public void comparadorUser1(){
+        a=false;
+        for(Producto item:productos){
+            if(item.getCodproducto().equals(codproducto)){
+                a=true;
+                break;
+            }
+        }
+    }
+
+    public boolean isA() {
+        return a;
+    }
+
+    public void setA(boolean a) {
+        this.a = a;
+    }
     public int getCantidad() {
         return cantidad;
     }

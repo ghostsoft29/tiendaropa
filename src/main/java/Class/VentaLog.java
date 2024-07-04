@@ -15,7 +15,7 @@ import javax.swing.JTextArea;
 public class VentaLog{
     public static LinkedList<Venta>ventas=new LinkedList<>();
     public static LinkedList<Venta>ventacola=new LinkedList<>();
-    public static int u=0,cantidad,codv,codc;
+    public static int u=0,cantidad,codv,codc,codv1,codvf1;
     public static String codproducto,estado;
     
     public void AgregarVenta(){
@@ -25,6 +25,10 @@ public class VentaLog{
         ventacola.addLast(en);
     }
     
+    public void ini(){
+        codv1=ventacola.getFirst().getCodv();
+        codvf1=ventacola.getLast().getCodv();
+    }
     public void listar(JTextArea list){
         
         list.setText("LISTA de Venta\n");
@@ -40,10 +44,10 @@ public class VentaLog{
             list.append("\n"+item);
         }
     }
-
+    //atender cola
     public Venta dequeue(JTextArea list){
         if(ventacola.size()==0){
-            list.setText("YA NO HAY ELEMENTOS\n");
+            list.setText("Sin Ventas\n");
             return null;
         }
         else{
@@ -51,8 +55,22 @@ public class VentaLog{
             Venta f=ventas.getFirst();
             f.setEstado(estado);
             ventacola.remove(0);
+            codv1=ventacola.getFirst().getCodv();
             return e;
             
+        }
+    }
+    
+    //atender pila
+    public Venta pop(JTextArea list){
+        if(ventacola.size()>0){
+            Venta e=ventacola.getLast();
+            ventacola.remove(ventacola.size()-1);
+            codvf1=ventacola.getLast().getCodv();
+            return e;
+        }else{
+            System.out.println("Sin ventas");
+            return null;
         }
     }
     
@@ -71,6 +89,23 @@ public class VentaLog{
         return null;
     } 
 
+    public static int getCodvf1() {
+        return codvf1;
+    }
+
+    public static void setCodvf1(int codvf1) {
+        VentaLog.codvf1 = codvf1;
+    }
+
+    public static int getCodv1() {
+        return codv1;
+    }
+
+    public static void setCodv1(int codv1) {
+        VentaLog.codv1 = codv1;
+    }
+
+    
     public int getCodc() {
         return codc;
     }
