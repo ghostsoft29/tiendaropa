@@ -12,7 +12,9 @@ import javax.swing.JOptionPane;
  * @author GHOSTSOFT
  */
 public class RegistrarC extends javax.swing.JFrame {
-    ClienteLog cl=new ClienteLog();
+
+    ClienteLog cl = new ClienteLog();
+
     /**
      * Creates new form RegistrarC
      */
@@ -110,24 +112,36 @@ public class RegistrarC extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        cl.setName(String.valueOf(txtName.getText()));
-        cl.setUser(String.valueOf(txtUser.getText()));
-        cl.setPass(String.valueOf(txtPass.getText()));
-        cl.setEdad(Integer.parseInt(txtEdad.getText()));
-        cl.comparadorUser1();
-        if(cl.isA()==false){
-            cl.insertar1();
-            JOptionPane.showMessageDialog(null, "Usuario Registrado");
-            dispose();
-            
-        }else{
-            JOptionPane.showMessageDialog(null, "Existe un Usuario igual");
-            txtName.setText(null);
-            txtPass.setText(null);
-            txtUser.setText(null);
-            txtEdad.setText(null);
-            txtName.requestFocus();
+
+        boolean valid = true;
+        String numeroText = txtEdad.getText();
+
+        if (!numeroText.matches("\\d+")) {
+            valid = false;
+            JOptionPane.showMessageDialog(null, "Edad no valida");
         }
+        if (valid) {
+            cl.setName(String.valueOf(txtName.getText()));
+            cl.setUser(String.valueOf(txtUser.getText()));
+            cl.setPass(String.valueOf(txtPass.getText()));
+            cl.setEdad(Integer.parseInt(txtEdad.getText()));
+            cl.comparadorUser1();
+            if (cl.isA() == false) {
+                cl.insertar1();
+                JOptionPane.showMessageDialog(null, "Usuario Registrado");
+                dispose();
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Existe un Usuario igual");
+                txtName.setText(null);
+                txtPass.setText(null);
+                txtUser.setText(null);
+                txtEdad.setText(null);
+                txtName.requestFocus();
+            }
+        }
+
+
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**

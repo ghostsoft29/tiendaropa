@@ -5,6 +5,7 @@
 package Class;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.LinkedList;
 import javax.swing.JTextArea;
 
@@ -18,7 +19,6 @@ public class ClienteLog {
     private boolean a;
     
     private static LinkedList<Cliente>clientes=new LinkedList<>();
-    
     public void acceso1(){
         for(Cliente item:clientes){
             if(item.getCliente().equals(user)&&item.getContrasenia().equals(pass)){

@@ -4,7 +4,7 @@
  */
 package JForm;
 
-import Class.VentaLog;
+import Class.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,9 +21,11 @@ public class AVentas extends javax.swing.JInternalFrame {
         vl.listar1(txtArea);
         txtArea.disable();
         txtCodigoV.disable();
+        txtCodVf.disable();
         vl.ini();
         txtCodigoV.setText(String.valueOf(vl.getCodv1()));
         txtCodVf.setText(String.valueOf(vl.getCodvf1()));
+        
     }
 
     /**
@@ -45,6 +47,7 @@ public class AVentas extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         txtCodVf = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
 
         txtArea.setColumns(20);
         txtArea.setRows(5);
@@ -77,12 +80,24 @@ public class AVentas extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setText("PRECIO");
+        jButton1.setText("P y Ca");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("ATENDER PILA");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Cl y Ca");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
         });
 
@@ -109,12 +124,14 @@ public class AVentas extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 96, Short.MAX_VALUE)
-                        .addComponent(btnCerrar1))
+                        .addComponent(btnCerrar1)
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jButton1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton3)
+                            .addComponent(jButton1))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +143,9 @@ public class AVentas extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnCerrar1)
-                        .addGap(19, 19, 19)
+                        .addGap(22, 22, 22)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -178,6 +197,18 @@ public class AVentas extends javax.swing.JInternalFrame {
         txtCodVf.setText(String.valueOf(vl.getCodvf1()));
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        vl.porProductoCantidad(txtArea);
+        txtCodigoV.setText(String.valueOf(vl.getCodv1()));
+        txtCodVf.setText(String.valueOf(vl.getCodvf1()));
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        vl.porClienteCantidad(txtArea);
+        txtCodigoV.setText(String.valueOf(vl.getCodv1()));
+        txtCodVf.setText(String.valueOf(vl.getCodvf1()));
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtender;
@@ -185,6 +216,7 @@ public class AVentas extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnListar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtArea;

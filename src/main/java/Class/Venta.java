@@ -4,6 +4,8 @@
  */
 package Class;
 
+import java.util.Objects;
+
 /**
  *
  * @author GHOSTSOFT
@@ -67,6 +69,39 @@ public class Venta {
     @Override
     public String toString() {
         return + codv +" "+ codc +" " + codp + " " + cantidad + " " + estado;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Venta other = (Venta) obj;
+        if (this.codv != other.codv) {
+            return false;
+        }
+        if (this.codc != other.codc) {
+            return false;
+        }
+        if (this.cantidad != other.cantidad) {
+            return false;
+        }
+        if (!Objects.equals(this.codp, other.codp)) {
+            return false;
+        }
+        return Objects.equals(this.estado, other.estado);
     }
     
     

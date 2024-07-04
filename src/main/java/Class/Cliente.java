@@ -4,6 +4,8 @@
  */
 package Class;
 
+import java.util.Objects;
+
 /**
  *
  * @author GHOSTSOFT
@@ -64,8 +66,44 @@ public class Cliente {
     }
 
     @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Cliente other = (Cliente) obj;
+        if (this.codigo != other.codigo) {
+            return false;
+        }
+        if (this.edad != other.edad) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        if (!Objects.equals(this.cliente, other.cliente)) {
+            return false;
+        }
+        return Objects.equals(this.contrasenia, other.contrasenia);
+    }
+
+    
+    
+    @Override
     public String toString() {
         return "codigo=" + codigo + ", nombre=" + nombre + ", cliente=" + cliente + ", contrasenia=" + contrasenia + ", edad=" + edad + '}';
-    } 
+    }
+  
     
 }
