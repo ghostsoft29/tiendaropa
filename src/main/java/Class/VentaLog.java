@@ -20,8 +20,8 @@ public class VentaLog {
     public static LinkedList<Venta> ventas = new LinkedList<>();
     public static LinkedList<Venta> ventacola = new LinkedList<>();
     //public static LinkedList<Producto>productos=new LinkedList<>();
-    public static int u = 0, cantidad, codv, codc, codv1, codvf1,cantidadc;
-    public static String codproducto, estado;
+    public static int u = 0, cantidad, codv, codc, codv1, codvf1, cantidadc,cantidadcl;
+    public static String codproducto, estado,codcliente;
 
     //Declarar Compradores
     Comparator<Venta> porCodC = Comparator.comparing(Venta::getCodc);
@@ -126,10 +126,19 @@ public class VentaLog {
         }
         return null;
     }
-    
+
     public static Producto buscarp(LinkedList<Producto> productos, String data) {
         for (Producto item : productos) {
             if (item.getCodproducto().equals(data)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    public static Cliente buscarc(LinkedList<Cliente> clientes, String data) {
+        for (Cliente item : clientes) {
+            if (item.getCliente().equals(data)) {
                 return item;
             }
         }
@@ -146,13 +155,44 @@ public class VentaLog {
         }
     }
 
-    public void controlca(){
+    public void controlca() {
         Producto us = buscarp(ProductoLog.productos, codproducto);
         if (us != null) {
-            cantidadc=us.getCantidad();
+            cantidadc = us.getCantidad();
+        }
+    }
+    public void sumac(){
+        Cliente us = buscarc(ClienteLog.clientes, codcliente);
+        if (us != null) {
+            cantidadcl=0;
+            cantidadcl = us.getCantidad();
+        }
+    }
+    public void sumad(){
+        Cliente us = buscarc(ClienteLog.clientes, codcliente);
+        if (us != null) {
+            us.setCantidad(cantidadcl);
         }
     }
 
+    public static int getCantidadcl() {
+        return cantidadcl;
+    }
+
+    public static void setCantidadcl(int cantidadcl) {
+        VentaLog.cantidadcl = cantidadcl;
+    }
+
+    
+    public static String getCodcliente() {
+        return codcliente;
+    }
+
+    public static void setCodcliente(String codcliente) {
+        VentaLog.codcliente = codcliente;
+    }
+
+    
     public static int getCantidadc() {
         return cantidadc;
     }
@@ -160,8 +200,7 @@ public class VentaLog {
     public static void setCantidadc(int cantidadc) {
         VentaLog.cantidadc = cantidadc;
     }
-    
-    
+
     public static int getCodvf1() {
         return codvf1;
     }
@@ -217,5 +256,6 @@ public class VentaLog {
     public void setCodv(int codv) {
         this.codv = codv;
     }
+
 
 }

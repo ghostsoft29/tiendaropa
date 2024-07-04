@@ -112,7 +112,7 @@ public class RegistrarC extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-
+        int ed = 0;
         boolean valid = true;
         String numeroText = txtEdad.getText();
 
@@ -125,20 +125,40 @@ public class RegistrarC extends javax.swing.JFrame {
             cl.setUser(String.valueOf(txtUser.getText()));
             cl.setPass(String.valueOf(txtPass.getText()));
             cl.setEdad(Integer.parseInt(txtEdad.getText()));
-            cl.comparadorUser1();
-            if (cl.isA() == false) {
-                cl.insertar1();
-                JOptionPane.showMessageDialog(null, "Usuario Registrado");
-                dispose();
+            ed = Integer.parseInt(txtEdad.getText());
+            if (ed >= 18) {
+                if (ed >= 18 && ed < 30) {
+                    cl.setCat("Joven");
+                } else if (ed < 60) {
+                    cl.setCat("Adulto");
+                } else {
+                    cl.setCat("Mayor");
+                }
+                cl.setCan(0);
+                //Usuario cliente que no sea igual
+                cl.comparadorUser1();
+                if (cl.isA() == false) {
+                    cl.insertar1();
+                    JOptionPane.showMessageDialog(null, "Usuario Registrado");
+                    dispose();
 
-            } else {
-                JOptionPane.showMessageDialog(null, "Existe un Usuario igual");
-                txtName.setText(null);
-                txtPass.setText(null);
-                txtUser.setText(null);
-                txtEdad.setText(null);
-                txtName.requestFocus();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Existe un Usuario igual");
+                    txtName.setText(null);
+                    txtPass.setText(null);
+                    txtUser.setText(null);
+                    txtEdad.setText(null);
+                    txtName.requestFocus();
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Eres menor de Edad");
+                    txtName.setText(null);
+                    txtPass.setText(null);
+                    txtUser.setText(null);
+                    txtEdad.setText(null);
+                    txtName.requestFocus();
             }
+
         }
 
 

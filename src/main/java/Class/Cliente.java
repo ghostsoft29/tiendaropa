@@ -16,15 +16,39 @@ public class Cliente {
     private String cliente;
     private String contrasenia;
     private int edad;
+    private String categoria;
+    private int cantidad;
 
-    public Cliente(int codigo, String nombre, String cliente, String contrasenia, int edad) {
+    public Cliente(int codigo, String nombre, String cliente, String contrasenia, int edad, String categoria, int cantidad) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.cliente = cliente;
         this.contrasenia = contrasenia;
         this.edad = edad;
+        this.categoria = categoria;
+        this.cantidad = cantidad;
     }
 
+    
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    
+    
     public String getNombre() {
         return nombre;
     }
@@ -98,12 +122,14 @@ public class Cliente {
         return Objects.equals(this.contrasenia, other.contrasenia);
     }
 
-    
-    
     @Override
     public String toString() {
-        return "codigo=" + codigo + ", nombre=" + nombre + ", cliente=" + cliente + ", contrasenia=" + contrasenia + ", edad=" + edad + '}';
+        return "Cliente{" + "codigo=" + codigo + ", nombre=" + nombre + ", cliente=" + cliente + ", contrasenia=" + contrasenia + ", edad=" + edad + ", categoria=" + categoria + ", cantidad=" + cantidad + '}';
     }
+
+    
+    
+   
   
     
 }

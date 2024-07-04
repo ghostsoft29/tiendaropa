@@ -14,11 +14,12 @@ import javax.swing.JTextArea;
  * @author GHOSTSOFT
  */
 public class ClienteLog {
-    private static String user,user1,pass,name;
-    private static int cod,cod1,tip,tip1,edad,u,uu;
-    private boolean a;
+    public static String user,user1,pass,name,cat;
+    public static int cod,cod1,tip,tip1,edad,u,uu,can;
+    public boolean a;
     
-    private static LinkedList<Cliente>clientes=new LinkedList<>();
+    public static LinkedList<Cliente>clientes=new LinkedList<>();
+    
     public void acceso1(){
         for(Cliente item:clientes){
             if(item.getCliente().equals(user)&&item.getContrasenia().equals(pass)){
@@ -41,7 +42,7 @@ public class ClienteLog {
     
     public void insertar1(){
         u=u+1;
-        Cliente en=new Cliente(u,name,user,pass,edad);
+        Cliente en=new Cliente(u,name,user,pass,edad,cat,can);
         clientes.addLast(en);
     }
 
@@ -53,6 +54,50 @@ public class ClienteLog {
         }
     }
 
+    //Declarar Compradores
+    Comparator<Cliente> porNombre = Comparator.comparing(Cliente::getNombre);
+    Comparator<Cliente> porCategoria = Comparator.comparing(Cliente::getCategoria);
+    Comparator<Cliente> porCantidad = Comparator.comparing(Cliente::getCantidad);
+
+    //Reglas del Negocio
+    Comparator<Cliente> porNombreyCantidad = porNombre.thenComparing(porCantidad.reversed());
+    Comparator<Cliente> porCategoriayCantidad = porCategoria.thenComparing(porCantidad.reversed());
+
+    public void porNombreCantidad(JTextArea list) {
+
+        list.setText("LISTA de Venta\n");
+        clientes.sort(porNombreyCantidad);
+        for (Cliente item : clientes) {
+            list.append("\n" + item);
+        }
+    }
+
+    public void porCategoriaCantidad(JTextArea list) {
+        list.setText("LISTA de Venta\n");
+        clientes.sort(porCategoriayCantidad);
+        for (Cliente item : clientes) {
+            list.append("\n" + item);
+        }
+    }
+    
+    
+    public static String getCat() {
+        return cat;
+    }
+
+    public static void setCat(String cat) {
+        ClienteLog.cat = cat;
+    }
+
+    public static int getCan() {
+        return can;
+    }
+
+    public static void setCan(int can) {
+        ClienteLog.can = can;
+    }
+
+    
     public static int getUu() {
         return uu;
     }

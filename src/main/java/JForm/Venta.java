@@ -16,13 +16,12 @@ public class Venta extends javax.swing.JFrame {
     ProductoLog pl = new ProductoLog();
     VentaLog vl = new VentaLog();
     ClienteLog cl = new ClienteLog();
-
     public Venta() {
 
         initComponents();
         pl.listar(txtArea);
         lblUsuario.setText(cl.getUser1());
-
+        //usu=cl.getUser1();
     }
 
     /**
@@ -165,7 +164,7 @@ public class Venta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
-        int ct = 0;
+        int ct = 0,cv=0;
         boolean valid = true;
         String numeroText = txtCantidad.getText();
 
@@ -185,7 +184,10 @@ public class Venta extends javax.swing.JFrame {
                 vl.setEstado("En Proceso");
                 vl.AgregarVenta();
                 pl.CambiarCant();
-
+                vl.setCodcliente(cl.getUser1());
+                vl.sumac();
+                vl.setCantidadcl(vl.getCantidadcl()+1);
+                vl.sumad();
                 pl.listar(txtArea);
                 vl.listar(txtVenta);
 
