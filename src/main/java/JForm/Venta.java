@@ -4,25 +4,25 @@
  */
 package JForm;
 
-
 import Class.*;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author GHOSTSOFT
  */
 public class Venta extends javax.swing.JFrame {
-    ProductoLog pl=new ProductoLog(); 
-    VentaLog vl=new VentaLog();
-    ClienteLog cl=new ClienteLog();
-    
+
+    ProductoLog pl = new ProductoLog();
+    VentaLog vl = new VentaLog();
+    ClienteLog cl = new ClienteLog();
+
     public Venta() {
-       
-            initComponents();
-            pl.listar(txtArea);
-            lblUsuario.setText(cl.getUser1());
-            
-            
+
+        initComponents();
+        pl.listar(txtArea);
+        lblUsuario.setText(cl.getUser1());
+
     }
 
     /**
@@ -165,18 +165,40 @@ public class Venta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
-        vl.setCodc(cl.getUu());
-        vl.setCodproducto(String.valueOf(txtCodigo.getText()));
-        vl.setCantidad(Integer.parseInt(txtCantidad.getText()));
-        pl.setCodproducto(String.valueOf(txtCodigo.getText()));
-        pl.setCantidad(Integer.parseInt(txtCantidad.getText()));
-        vl.setEstado("En Proceso");
-        vl.AgregarVenta();
-        pl.CambiarCant();
-        
-        pl.listar(txtArea);
-        vl.listar(txtVenta);
-        
+        int ct = 0;
+        boolean valid = true;
+        String numeroText = txtCantidad.getText();
+
+        if (!numeroText.matches("\\d+")) {
+            valid = false;
+            JOptionPane.showMessageDialog(null, "Solo numeros");
+        }
+        if (valid) {
+            vl.setCodc(cl.getUu());
+            vl.setCodproducto(String.valueOf(txtCodigo.getText()));
+            vl.setCantidad(Integer.parseInt(txtCantidad.getText()));
+            ct = Integer.parseInt(txtCantidad.getText());
+            pl.setCodproducto(String.valueOf(txtCodigo.getText()));
+            pl.setCantidad(Integer.parseInt(txtCantidad.getText()));
+            vl.controlca();
+            if (ct <= vl.getCantidadc() && ct != 0 && ct > 0) {
+                vl.setEstado("En Proceso");
+                vl.AgregarVenta();
+                pl.CambiarCant();
+
+                pl.listar(txtArea);
+                vl.listar(txtVenta);
+
+                txtCodigo.setText(null);
+                txtCantidad.setText(null);
+                txtCodigo.requestFocus();
+            } else {
+                JOptionPane.showMessageDialog(null, "Cantidad no valida");
+                txtCodigo.setText(null);
+                txtCantidad.setText(null);
+                txtCodigo.requestFocus();
+            }
+        }
     }//GEN-LAST:event_btnComprarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
@@ -185,7 +207,7 @@ public class Venta extends javax.swing.JFrame {
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnCerrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrar1ActionPerformed
-        MasterC ms=new MasterC();
+        MasterC ms = new MasterC();
         ms.show();
         hide();
     }//GEN-LAST:event_btnCerrar1ActionPerformed

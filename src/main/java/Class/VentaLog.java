@@ -19,7 +19,8 @@ public class VentaLog {
 
     public static LinkedList<Venta> ventas = new LinkedList<>();
     public static LinkedList<Venta> ventacola = new LinkedList<>();
-    public static int u = 0, cantidad, codv, codc, codv1, codvf1;
+    //public static LinkedList<Producto>productos=new LinkedList<>();
+    public static int u = 0, cantidad, codv, codc, codv1, codvf1,cantidadc;
     public static String codproducto, estado;
 
     //Declarar Compradores
@@ -125,6 +126,15 @@ public class VentaLog {
         }
         return null;
     }
+    
+    public static Producto buscarp(LinkedList<Producto> productos, String data) {
+        for (Producto item : productos) {
+            if (item.getCodproducto().equals(data)) {
+                return item;
+            }
+        }
+        return null;
+    }
 
     public void ini() {
         if (ventacola.isEmpty()) {
@@ -136,6 +146,22 @@ public class VentaLog {
         }
     }
 
+    public void controlca(){
+        Producto us = buscarp(ProductoLog.productos, codproducto);
+        if (us != null) {
+            cantidadc=us.getCantidad();
+        }
+    }
+
+    public static int getCantidadc() {
+        return cantidadc;
+    }
+
+    public static void setCantidadc(int cantidadc) {
+        VentaLog.cantidadc = cantidadc;
+    }
+    
+    
     public static int getCodvf1() {
         return codvf1;
     }
