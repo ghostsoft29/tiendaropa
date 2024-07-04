@@ -11,12 +11,12 @@ import javax.swing.JOptionPane;
  *
  * @author GHOSTSOFT
  */
-public class AVentas extends javax.swing.JInternalFrame {
+public class Aventass extends javax.swing.JInternalFrame {
     VentaLog vl=new VentaLog();
     /**
-     * Creates new form AVentas
+     * Creates new form Aventass
      */
-    public AVentas() {
+    public Aventass() {
         initComponents();
         vl.listar1(txtArea);
         txtArea.disable();
@@ -25,7 +25,6 @@ public class AVentas extends javax.swing.JInternalFrame {
         vl.ini();
         txtCodigoV.setText(String.valueOf(vl.getCodv1()));
         txtCodVf.setText(String.valueOf(vl.getCodvf1()));
-        
     }
 
     /**
@@ -37,39 +36,22 @@ public class AVentas extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnAtenderCola = new javax.swing.JButton();
+        btnListar = new javax.swing.JButton();
+        btnAtenderPila = new javax.swing.JButton();
+        txtCodVf = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtArea = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         txtCodigoV = new javax.swing.JTextField();
-        btnAtender = new javax.swing.JButton();
         btnCerrar1 = new javax.swing.JButton();
-        btnListar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        txtCodVf = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
 
-        txtArea.setColumns(20);
-        txtArea.setRows(5);
-        txtArea.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jScrollPane1.setViewportView(txtArea);
-
-        jLabel1.setText("CODIGO VENTA");
-
-        txtCodigoV.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-
-        btnAtender.setText("ATENDER COLA");
-        btnAtender.addActionListener(new java.awt.event.ActionListener() {
+        btnAtenderCola.setText("ATENDER COLA");
+        btnAtenderCola.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtenderActionPerformed(evt);
-            }
-        });
-
-        btnCerrar1.setBackground(new java.awt.Color(255, 51, 51));
-        btnCerrar1.setText("X");
-        btnCerrar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrar1ActionPerformed(evt);
+                btnAtenderColaActionPerformed(evt);
             }
         });
 
@@ -80,24 +62,41 @@ public class AVentas extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setText("P y Ca");
+        btnAtenderPila.setText("ATENDER PILA");
+        btnAtenderPila.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtenderPilaActionPerformed(evt);
+            }
+        });
+
+        txtArea.setColumns(20);
+        txtArea.setRows(5);
+        txtArea.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(txtArea);
+
+        jLabel1.setText("CODIGO VENTA");
+
+        txtCodigoV.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+
+        btnCerrar1.setBackground(new java.awt.Color(255, 51, 51));
+        btnCerrar1.setText("X");
+        btnCerrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrar1ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("CL CA");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("ATENDER PILA");
+        jButton2.setText("PR CA");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("Cl y Ca");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
             }
         });
 
@@ -106,70 +105,68 @@ public class AVentas extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnListar)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtCodigoV)
-                            .addComponent(txtCodVf))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addComponent(btnAtender))
-                        .addGap(110, 110, 110)))
+                .addGap(133, 133, 133)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtCodigoV)
+                    .addComponent(txtCodVf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 96, Short.MAX_VALUE)
-                        .addComponent(btnCerrar1)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3)
-                            .addComponent(jButton1))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(btnAtenderPila)
+                    .addComponent(btnAtenderCola))
+                .addContainerGap(232, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(jScrollPane1)
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(btnCerrar1)
+                            .addContainerGap())
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jButton1)
+                            .addGap(34, 34, 34)))
+                    .addComponent(btnListar)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnCerrar1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnListar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnCerrar1)
-                        .addGap(22, 22, 22)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtCodigoV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAtender))
+                            .addComponent(btnAtenderCola))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
+                            .addComponent(btnAtenderPila)
                             .addComponent(txtCodVf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
+                        .addGap(21, 21, 21)
                         .addComponent(jLabel1)))
-                .addGap(21, 21, 21)
-                .addComponent(btnListar)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAtenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtenderActionPerformed
-        
+    private void btnAtenderColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtenderColaActionPerformed
         vl.setCodv(Integer.parseInt(txtCodigoV.getText()));
         vl.setEstado("Atendido");
         vl.CambiarDetalle();
@@ -177,17 +174,13 @@ public class AVentas extends javax.swing.JInternalFrame {
         JOptionPane.showMessageDialog(null, "Venta Atendida");
         vl.listar1(txtArea);
         txtCodigoV.setText(String.valueOf(vl.getCodv1()));
-    }//GEN-LAST:event_btnAtenderActionPerformed
-
-    private void btnCerrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrar1ActionPerformed
-        hide();
-    }//GEN-LAST:event_btnCerrar1ActionPerformed
+    }//GEN-LAST:event_btnAtenderColaActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
         vl.listar1(txtArea);
     }//GEN-LAST:event_btnListarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnAtenderPilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtenderPilaActionPerformed
         vl.setCodv(Integer.parseInt(txtCodVf.getText()));
         vl.setEstado("Atendido");
         vl.CambiarDetalle();
@@ -195,7 +188,11 @@ public class AVentas extends javax.swing.JInternalFrame {
         JOptionPane.showMessageDialog(null, "Venta Atendida");
         vl.listar1(txtArea);
         txtCodVf.setText(String.valueOf(vl.getCodvf1()));
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnAtenderPilaActionPerformed
+
+    private void btnCerrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrar1ActionPerformed
+        hide();
+    }//GEN-LAST:event_btnCerrar1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         vl.porProductoCantidad(txtArea);
@@ -203,20 +200,20 @@ public class AVentas extends javax.swing.JInternalFrame {
         txtCodVf.setText(String.valueOf(vl.getCodvf1()));
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         vl.porClienteCantidad(txtArea);
         txtCodigoV.setText(String.valueOf(vl.getCodv1()));
         txtCodVf.setText(String.valueOf(vl.getCodvf1()));
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAtender;
+    private javax.swing.JButton btnAtenderCola;
+    private javax.swing.JButton btnAtenderPila;
     private javax.swing.JButton btnCerrar1;
     private javax.swing.JButton btnListar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtArea;

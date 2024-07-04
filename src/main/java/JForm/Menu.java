@@ -251,7 +251,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        AVentas re=new AVentas();
+        Aventass re=new Aventass();
         jpanel1.add(re);
         re.show();
     }//GEN-LAST:event_jMenuItem8ActionPerformed
