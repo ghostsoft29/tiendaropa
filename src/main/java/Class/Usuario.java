@@ -21,6 +21,10 @@ public class Usuario {
         this.tipo = tipo;
     }
 
+    public Usuario(String usuario) {
+        this.usuario = usuario;
+    }
+    
     public int getCodigo() {
         return codigo;
     }

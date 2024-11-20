@@ -5,6 +5,7 @@
 package Class;
 import java.util.ArrayList;
 import java.util.Arrays;
+import static java.util.Collections.list;
 import java.util.LinkedList;
 import javax.swing.JTextArea;
 /**
@@ -21,6 +22,7 @@ public class User {
     private static ArrayList<String> contraseña = new ArrayList(Arrays.asList("admin"));
     private static ArrayList<Integer> tipo = new ArrayList(Arrays.asList(1));
     
+    
     //nuevo
     private static LinkedList<Usuario>usuarios=new LinkedList<>(
             Arrays.asList(new Usuario(u,"admin","admin",1)));
@@ -32,6 +34,7 @@ public class User {
                 a=true;
                 user1=item.getUsuario();
                 tip1=item.getTipo();
+                cod=item.getCodigo()-1;
             }
         }
     }

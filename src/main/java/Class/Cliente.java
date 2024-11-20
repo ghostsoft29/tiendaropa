@@ -124,7 +124,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" + "codigo=" + codigo + ", nombre=" + nombre + ", cliente=" + cliente + ", contrasenia=" + contrasenia + ", edad=" + edad + ", categoria=" + categoria + ", cantidad=" + cantidad + '}';
+        return "codigo=" + codigo + ", nombre=" + nombre + ", cliente=" + cliente + ", contrasenia=" + contrasenia + ", edad=" + edad + ", categoria=" + categoria + ", cantidad compras=" + cantidad + '}';
     }
 
     

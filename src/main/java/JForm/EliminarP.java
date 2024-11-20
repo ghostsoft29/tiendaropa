@@ -5,19 +5,20 @@
 package JForm;
 
 import Class.*;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author GHOSTSOFT
  */
 public class EliminarP extends javax.swing.JInternalFrame {
-    ProductoLog pl=new ProductoLog();
+    ComidaLog cl=new ComidaLog();
     /**
      * Creates new form EliminarP
      */
     public EliminarP() {
         initComponents();
-        pl.listar(txtArea);
+        cl.listar(txtArea);
         txtArea.disable();
     }
 
@@ -103,9 +104,15 @@ public class EliminarP extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        pl.setCodproducto(String.valueOf(txtCodip.getText()));
-        pl.EliminarProduc(txtArea);
-        pl.listar(txtArea);
+        cl.setCodComida(String.valueOf(txtCodip.getText()));
+        cl.setPlato(String.valueOf(txtCodip.getText()));
+        cl.comparadorComidaP();
+        if (cl.isA() == true) {
+            cl.EliminarComida();
+            cl.listar(txtArea);
+        } else {
+            JOptionPane.showMessageDialog(null, "No existe Codigo de Comida");
+        }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed

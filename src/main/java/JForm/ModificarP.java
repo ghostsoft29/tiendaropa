@@ -5,13 +5,16 @@
 package JForm;
 
 import Class.*;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author GHOSTSOFT
  */
 public class ModificarP extends javax.swing.JInternalFrame {
-    ProductoLog pl=new ProductoLog();
+
+    ProductoLog pl = new ProductoLog();
+
     /**
      * Creates new form ModificarP
      */
@@ -84,37 +87,35 @@ public class ModificarP extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(189, 189, 189)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtDetalle)
-                                    .addComponent(txtMarca)
-                                    .addComponent(txtCategoria)
-                                    .addComponent(txtPrecio)
-                                    .addComponent(txtCantidad)
-                                    .addComponent(txtCodip, javax.swing.GroupLayout.Alignment.TRAILING)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(123, 123, 123)
-                                .addComponent(btnAgregar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(253, 253, 253))
+                            .addComponent(txtDetalle)
+                            .addComponent(txtMarca)
+                            .addComponent(txtCategoria)
+                            .addComponent(txtPrecio)
+                            .addComponent(txtCantidad)
+                            .addComponent(txtCodip, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(123, 123, 123)
+                        .addComponent(btnAgregar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(282, 282, 282))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addComponent(btnCerrar)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,14 +160,40 @@ public class ModificarP extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        pl.setCodproducto(String.valueOf(txtCodip.getText()));
-        pl.setDetalle(String.valueOf(txtDetalle.getText()));
-        pl.setMarca(String.valueOf(txtMarca.getText()));
-        pl.setCategoria(String.valueOf(txtCategoria.getText()));
-        pl.setPrecio(Double.parseDouble(txtPrecio.getText()));
-        pl.setCantidad(Integer.parseInt(txtCantidad.getText()));
-        pl.ModificarProduc(txtArea);
-        pl.listar(txtArea);
+        boolean valid = true;
+        String numeroText = txtCantidad.getText();
+        String doubleText = txtPrecio.getText();
+
+        if (!numeroText.matches("\\d+")) {
+            valid = false;
+            JOptionPane.showMessageDialog(null, "cantidad no valida");
+        }
+        if (!doubleText.matches("\\d*\\.?\\d+")) {
+            valid = false;
+            JOptionPane.showMessageDialog(null, "Precio no valido");
+        }
+        if (valid) {
+            pl.setCodproducto(String.valueOf(txtCodip.getText()));
+            pl.setDetalle(String.valueOf(txtDetalle.getText()));
+            pl.setMarca(String.valueOf(txtMarca.getText()));
+            pl.setCategoria(String.valueOf(txtCategoria.getText()));
+            pl.setPrecio(Double.parseDouble(txtPrecio.getText()));
+            pl.setCantidad(Integer.parseInt(txtCantidad.getText()));
+            if (pl.isA() == false) {
+                pl.ModificarProduc(txtArea);
+                pl.listar(txtArea);JOptionPane.showMessageDialog(null, "Producto Modificado");
+            } else {
+                JOptionPane.showMessageDialog(null, "Existe un Producto igual");
+                txtCodip.setText(null);
+                txtDetalle.setText(null);
+                txtMarca.setText(null);
+                txtCategoria.setText(null);
+                txtPrecio.setText(null);
+                txtCantidad.setText(null);
+                txtCodip.requestFocus();
+            }
+
+        }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed

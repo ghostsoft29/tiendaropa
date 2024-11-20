@@ -68,7 +68,7 @@ public class Venta {
 
     @Override
     public String toString() {
-        return + codv +" "+ codc +" " + codp + " " + cantidad + " " + estado;
+        return "venta= "+codv +"cliente= "+ codc +"producto= " + codp + " " + cantidad + " " + estado;
     }
 
     @Override
